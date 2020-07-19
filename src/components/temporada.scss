@@ -1,0 +1,33 @@
+.img {
+  width: 100%;
+  overflow: hidden;
+}
+.temporada {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: rgb(35, 39, 42);
+  width: calc(33.3333% - 13.3333px);
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+}
+.episodio {
+  font-size: 14px;
+  color: rgb(33, 150, 243);
+  margin-right: 10px;
+  font-weight: 400;
+}
+.title {
+  font-size: 16px;
+  color: rgb(220, 221, 222);
+  font-size: 16px;
+  font-weight: 400;
+  margin: auto;
+}
+.paragraph {
+  color: rgb(220, 221, 222);
+  font-size: 14px;
+  display: block;
+}
+.titles {
+  display: inline-flex;
+}

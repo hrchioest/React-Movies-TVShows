@@ -1,12 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Temporada from "./components/Temporada";
+import Temporadas from "./sections/Temporadas";
 
 function App() {
   return (
     <div>
-      <Temporada></Temporada>
+      <Temporadas></Temporadas>
     </div>
   );
 }

@@ -1,5 +1,45 @@
 @import "../common/mixins";
 
-h3 {
-    color: red;
+#home {
+    width: 100%;
+    background-color: $background;
+    font-family: $roboto;
+    color: $text;
+    padding: 20px 0px;
+}
+
+.header-nav {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 5px 0;
+    ul {
+        margin: 0;
+        list-style: none;
+        display:  flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        li {
+            cursor: pointer;
+        }
+    }
+    input {
+        display: none;
+    }
+}
+
+.list-home {
+    margin: 20px;
+    a {
+        color: $text;
+        text-decoration: none;
+        h2 {
+            font-size: 20px;
+            font-weight: 300;
+            margin: 15px 0 15px 0;
+        }
+    }
 }

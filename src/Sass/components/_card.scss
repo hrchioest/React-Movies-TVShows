@@ -1,0 +1,20 @@
+@import "../common/mixins";
+
+#card {
+    width: 300px;
+    height: 500px;
+    font-family: $roboto;
+    color: $text;
+    h3 {
+        font-size: 16px;
+        margin: 15px 0 5px 0;
+        font-weight: 300;
+    }
+}
+
+.img-card {
+    img {
+        width: 290px;
+        height: 450px;
+    }
+}

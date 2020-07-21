@@ -1,10 +1,11 @@
 import React from 'react';
+import Card from "../Components/Card";
 import "../App.scss";
 
-const Home = props => {
+const Home = () => {
     return (
-        <section>
-            <nav>
+        <section id="home">
+            <nav className="header-nav">
                 <ul>
                     <li>Home</li>
                     <li>Películas</li>
@@ -13,22 +14,26 @@ const Home = props => {
                 <input type="text" Placeholder="Búsqueda..." />
             </nav>
 
-            <div>
-                <a>
+            <div className="list-home">
+                <a href="#">
                     <h2>Películas que son tendencia</h2>
                     <i></i>
                 </a>
-                <div>Card divina</div>
+                <div>
+                    <Card />
+                </div>
             </div>
 
-            <div>
-                <a>
+            <div className="list-home">
+                <a href="#">
                     <h2>Series que son tendencia</h2>
                     <i></i>
                 </a>
-                <div>Card bella</div>
+                <div>
+                    <Card />
+                </div>
             </div>
-            
+
         </section>
     )
 };

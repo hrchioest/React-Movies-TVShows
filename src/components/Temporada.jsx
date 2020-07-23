@@ -12,14 +12,12 @@ const Temporada = () => {
         <span className='episodio'>EP01</span>
         <h4 className='title'>La recompensa</h4>
       </div>
-      <div>
-        <p className='paragraph'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, culpa?
-          Assumenda, at iste suscipit exercitationem libero odio a excepturi?
-          Dolorum assumenda inventore vel, temporibus quisquam sit modi veniam
-          rem omnis?
-        </p>
-      </div>
+      <p className='paragraph'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, culpa?
+        Assumenda, at iste suscipit exercitationem libero odio a excepturi?
+        Dolorum assumenda inventore vel, temporibus quisquam sit modi veniam rem
+        omnis?
+      </p>
     </div>
   );
 };

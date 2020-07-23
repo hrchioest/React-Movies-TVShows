@@ -1,16 +1,21 @@
 .img {
-  width: 100%;
   overflow: hidden;
 }
 img {
-  transform: scale(1);
-  transition: all 0.3s ease 0.2s;
+  width: 100%;
 }
+
 .temporada {
-  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: calc(33.3333% - 13.3333px);
-  @media (max-width: 400px) {
-    width: 100%;
+  margin-bottom: 20px;
+  @media (min-width: 1025px) {
+    width: calc(33.3333%-33.3333px);
+  }
+  @media (max-width: 1024px) {
+    width: calc(50% - 20px);
+  }
+  @media (max-width: 767px) {
+    width: calc(100%);
   }
 }
 .episodio {
@@ -29,8 +34,9 @@ img {
 .paragraph {
   color: rgb(220, 221, 222);
   font-size: 14px;
-  display: block;
+  line-height: 20px;
 }
 .titles {
   display: inline-flex;
+  margin-top: 25px;
 }

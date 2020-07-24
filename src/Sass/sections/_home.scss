@@ -1,45 +1,46 @@
 @import "../common/mixins";
 
 #home {
-    width: 100%;
+    width: calc(100% - 10%);
+    height: 1500px;
     background-color: $background;
     font-family: $roboto;
     color: $text;
-    padding: 20px 0px;
+    padding: 40px 5% 0 5%;
 }
 
-.header-nav {
-    width: 100%;
-    height: 40px;
-    background-color: black;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 5px 0;
-    ul {
-        margin: 0;
-        list-style: none;
-        display:  flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        li {
-            cursor: pointer;
-        }
-    }
-    input {
-        display: none;
-    }
-}
 
 .list-home {
-    margin: 20px;
+    height: 570px;
+    margin-bottom: 50px;
     a {
         color: $text;
         text-decoration: none;
         h2 {
-            font-size: 20px;
+            font-size: 32px;
             font-weight: 300;
-            margin: 15px 0 15px 0;
+            margin: 25px 0 25px 0;
+            @include phone {
+                font-size: 20px;
+            }
         }
     }
+    @include phone {
+        height: 550px; 
+    }
+    @include tablet {
+        height: 400px;
+    }
+}
+
+.card-list-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.arrow-list-home {
+    font-size: 20px;
+    color: $accent;
+    padding-left: 15px;
 }

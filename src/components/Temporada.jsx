@@ -9,7 +9,7 @@ const Temporada = () => {
         <img src={img} />
       </div>
       <div className='titles'>
-        <span className='episodio'>EP01</span>
+        <p className='episodio'>EP01</p>
         <h4 className='title'>La recompensa</h4>
       </div>
       <p className='paragraph'>

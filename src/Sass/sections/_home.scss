@@ -11,7 +11,7 @@
 
 
 .list-home {
-    height: 570px;
+    height: 600px;
     margin-bottom: 50px;
     a {
         color: $text;
@@ -29,7 +29,7 @@
         height: 550px; 
     }
     @include tablet {
-        height: 400px;
+        height: 570px;
     }
 }
 

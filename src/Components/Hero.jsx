@@ -1,13 +1,13 @@
 import React from 'react';
 import '../Style/Hero.scss';
-import foto from '../images/charlize.jpeg';
+import poster from '../images/charlize.jpeg';
 
 const Hero = () =>{
     return(
         <div className="hero-container">
             <div className="black-gradient"></div>
             <div className="hero-movie" style={{
-                backgroundImage: `url(${foto})`
+                backgroundImage: `url(${poster})`
             }}>
             </div>
             <div className="menu-hero">

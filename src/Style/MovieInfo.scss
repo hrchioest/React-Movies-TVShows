@@ -1,3 +1,5 @@
+@import '../Style/mixin';
+
 .all{
     max-width: 1400px;
     padding: 20px;
@@ -11,6 +13,10 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
+    @include tablet{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
     .img-poster{
         align-self: flex-start;
         display:flex;
@@ -28,6 +34,11 @@
         padding: 0;
         text-align: left;
         width: 100%;
+        @include tablet{
+            margin-top: 0;
+            padding: 0 30px;
+            width: calc(67% - 20px)
+        }
         .title-movie{
             color: rgb(220, 221, 222);
             font-size: 32px;

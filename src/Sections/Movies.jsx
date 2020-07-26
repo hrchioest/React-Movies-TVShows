@@ -5,11 +5,19 @@ import MovieInfo from '../Components/MovieInfo';
 
 const Movies = () =>{
     return(
-        <div>
+        <div className="container-section">
             <Hero></Hero>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <MovieInfo></MovieInfo>
         </div>
     )
 }
 
 export default Movies; 
+
+//no va <br>

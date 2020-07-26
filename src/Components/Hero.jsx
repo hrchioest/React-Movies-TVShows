@@ -10,13 +10,11 @@ const Hero = () =>{
                 backgroundImage: `url(${foto})`
             }}>
             </div>
-            <div className="pos">
-                <div className="menu-hero">
-                    <a className="font">INFO</a>
-                    <a className="font">REPARTO</a>
-                    <a className="font">VIDEOS</a>
-                    <a className="font">SIMILARES</a>
-                </div>
+            <div className="menu-hero">
+                <a className="font">INFO</a>
+                <a className="font">REPARTO</a>
+                <a className="font">VIDEOS</a>
+                <a className="font">SIMILARES</a>
             </div>
         </div>
     )

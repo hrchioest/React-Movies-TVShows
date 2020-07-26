@@ -12,7 +12,6 @@ const Movies = () =>{
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
             <MovieInfo></MovieInfo>
         </div>
     )

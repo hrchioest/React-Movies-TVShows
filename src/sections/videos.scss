@@ -4,5 +4,12 @@
   background-color: #36393f;
   flex-direction: row;
   justify-content: space-between;
-  padding: 15px;
+  padding: 45px;
+
+  @media (max-width: 1024px) {
+    padding: 32px;
+  }
+  @media (max-width: 767px) {
+    padding: 40px;
+  }
 }

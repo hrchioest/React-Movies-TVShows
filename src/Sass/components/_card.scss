@@ -1,0 +1,47 @@
+@import "../common/mixins";
+
+#card {
+    width: 20%;
+    max-width: 450px;
+    height: 450px;
+    font-family: $roboto;
+    color: $text;
+    padding: 0 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    h3 {
+        font-size: 20px;
+        margin: 15px 0 5px 0;
+        font-weight: 300;
+    }
+    @include phone {
+        width: 100%;
+        max-width: 420px;
+        height: 500px;
+        h3 {
+            font-size: 16px;
+        }
+    }
+    @include tablet {
+        width: 33%;
+        max-width: 420px;
+        height: 400px;
+    }
+}
+
+.img-card {
+    background-image: url(../../movie.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 90%;
+    transition: all 3s ease-in-out;
+}
+
+#card:hover {
+    .img-card {
+        background-size: 110%;
+    }
+}

@@ -1,0 +1,24 @@
+.video {
+  // @media (max-width: 1024px) {
+  //   width: calc(50% - 20px);
+  // }
+  @media (max-width: 767px) {
+    width: calc(100%);
+  }
+}
+// .youtube {
+// }
+.title,
+.subtitle {
+  color: rgb(220, 221, 222);
+  letter-spacing: 0.4px;
+  font-weight: 400;
+}
+.subtitle {
+  font-size: 14px;
+  margin: 8px 0 25px 0;
+}
+.title {
+  font-size: 15px;
+  margin-top: 10px;
+}

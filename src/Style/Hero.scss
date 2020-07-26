@@ -7,6 +7,9 @@
     @include tablet{
         height: 600px;
     }
+    @include desktop{
+        height: 600px; 
+    }
     .black-gradient{
         background: linear-gradient(to top, rgb(0, 0, 0) 0px, transparent 50%, transparent);
         height: 100%;
@@ -28,11 +31,15 @@
         margin: 20px 0 10px;
         padding: 20px 0;
         .font{
-            color:#dcddde;
+            color:#A8AAAD;
+            cursor: pointer;
             font-size: 20px;
             font-weight: bold;
             margin: 10px;
             padding-bottom: 10px;
+            &:hover{
+                color:#dcddde;
+            }
         }
 
     }

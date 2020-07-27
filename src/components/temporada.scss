@@ -1,6 +1,7 @@
 .temporada {
   width: calc(33.3333% - 13.3333px);
   margin-bottom: 20px;
+  padding: 6px;
   @media (min-width: 1025px) {
     width: calc(33.3333%-33.3333px);
   }

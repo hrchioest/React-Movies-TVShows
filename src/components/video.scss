@@ -1,8 +1,3 @@
-// .content-youtube {
-//   @media (max-width: 767px) {
-//     width: calc(100%);
-//   }
-// }
 .youtube {
   @media (min-width: 1025px) {
     height: 211px;
@@ -15,14 +10,12 @@
   @media (max-width: 767px) {
     height: 194px;
     width: 345px;
-    margin-left: -26px;
   }
 }
 
 .content-youtube {
   display: flex;
   flex-direction: column;
-  align-content: space-between;
   flex-wrap: wrap;
 }
 

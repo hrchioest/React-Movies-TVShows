@@ -1,0 +1,40 @@
+.temporada {
+  width: calc(33.3333% - 13.3333px);
+  margin-bottom: 20px;
+  padding: 6px;
+  @media (min-width: 1025px) {
+    width: calc(33.3333%-33.3333px);
+  }
+  @media (max-width: 1024px) {
+    width: calc(50% - 20px);
+  }
+  @media (max-width: 767px) {
+    width: calc(100%);
+  }
+}
+.img {
+  overflow: hidden;
+}
+img {
+  width: 100%;
+}
+.episodio {
+  font-size: 14px;
+  color: rgb(33, 150, 243);
+  margin-right: 10px;
+  font-weight: bold;
+}
+.title {
+  font-size: 16px;
+  color: rgb(220, 221, 222);
+  margin: auto;
+}
+.paragraph {
+  color: rgb(220, 221, 222);
+  font-size: 14px;
+  line-height: 20px;
+}
+.titles {
+  display: inline-flex;
+  margin-top: 20px;
+}

@@ -1,7 +1,13 @@
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+.App {
+  text-align: center;
+  
 #home {
   width: 100%;
   background-color: #36393F;
-  font-family: "Roboto", sans-serif;
   color: #DCDDDE;
   padding: 20px 0px;
 }

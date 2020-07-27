@@ -1,6 +1,6 @@
 import React from 'react';
-import img from '../images/laviejaguardia.jpg';
-import '../Style/MovieInfo.scss';
+import img from '../Images/laviejaguardia.jpg';
+import "../Sass/sections/MovieInfo.scss";
 
 const MovieInfo = () =>{
     return(

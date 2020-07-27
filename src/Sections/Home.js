@@ -10,7 +10,7 @@ const Home = () => {
 
             <div className="list-home">
                 <a href="#">
-                    <h2>
+                    <h2 className="list-home-title">
                         Películas que son tendencia
                         <FontAwesomeIcon className="arrow-list-home" icon={faArrowRight} />
                     </h2>

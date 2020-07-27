@@ -1,6 +1,6 @@
 import React from "react";
 import YouTube from "react-youtube";
-import "./video.scss";
+import "../Sass/components/video.scss";
 
 const Video = () => {
   const opts = {

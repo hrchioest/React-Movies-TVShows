@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Style/Hero.scss';
-import poster from '../images/charlize.jpeg';
+import "../Sass/components/Hero.scss";
+import poster from '../Images/charlize.jpeg';
 
 const Hero = () =>{
     return(

@@ -1,0 +1,18 @@
+.menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin: 20px 0 10px;
+    padding: 20px 0;
+    .tab{
+        color:#A8AAAD;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px;
+        padding-bottom: 10px;
+        &:hover{
+            color:#dcddde;
+        }
+    }
+}

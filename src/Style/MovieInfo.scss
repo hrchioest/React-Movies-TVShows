@@ -4,20 +4,22 @@
     max-width: 1400px;
     padding: 20px;
     width: 100%;
+    box-sizing: border-box;
+
 }
 
 .container-movie{
     align-items: flex-start;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    max-width: 100%;
-    @include phone{
-        justify-content: flex-start;
-        flex-direction: column;
-        flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    @include tablet{
+        flex-direction: row;
     }
     @include desktop{
+        flex-direction: row;
         justify-content: center;
     }
     .img-poster{
@@ -33,19 +35,20 @@
     .container-text{
         font-size: 14px;
         line-height: 20px;
-        margin-top: 0;
-        padding: 0 30px;
+        margin-top: 40px;
+        max-width: 600px;
+        padding: 0;
         text-align: left;
-        @include phone{
-            margin-top: 40px;
-            padding: 0;
-            width: 100%;
-        }
+        width: 100%;
         @include tablet{
-            width: 70%;
+            margin-top: 0;
+            padding: 0 30px;
+            max-width: 57%;
         }
         @include desktop{
-            width: 48%;
+            margin-top: 0;
+            padding: 0 30px;
+            max-width: 40%;
         }
         .title-movie{
             color: rgb(220, 221, 222);

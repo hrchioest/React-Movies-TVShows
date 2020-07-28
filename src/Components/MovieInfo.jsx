@@ -14,7 +14,7 @@ const MovieInfo = () =>{
                     <div className="rating-movie">
                         <i class="fa fa-star" aria-hidden="true"></i>
                     </div>
-                    <p className="description-movie">Nunc felis leo, pulvinar vel diam ac, finibus bibendum eros. Suspendisse blandit leo vel fermentum ultrices. Proin sodales scelerisque nulla, et pulvinar turpis consequat nec.</p>
+                    <p className="description-movie">Nunc felis leo, pulvinar vel diam ac, finibus bibendum eros. Suspendisse blandit leo vel fermentum ultrices. Proin sodales scelerisque nulla, et pulvinar turpis consequat nec.uspendisse blandit leo vel fermentum ultrices. Proin sodales scelerisque nulla, et pulvinar turpis consequat nec.</p>
                     <p className="duration-movie mgn-top">Duración: 124min</p>
                     <p className="gender-movie mgn-top">Géneros:
                         <a href=" " className="bttn accion">Acción</a>

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Style/MenuHero.scss';
+import '../Sass/components/MenuHero.scss';
 
 const MenuHero = () =>{
     return(

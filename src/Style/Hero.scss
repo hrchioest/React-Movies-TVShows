@@ -1,9 +1,11 @@
 @import '../Style/mixin';
 
 .hero-container{
+    box-sizing: border-box;
     background-color: rgb(0, 0, 0);
     height: 300px;
     position: relative;
+    width: 100%;
     @include tablet{
         height: 600px;
     }
@@ -23,25 +25,6 @@
         background-size: cover;
         height: 100%;
         width: 100%;
-    }
-    .menu-hero{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:center;
-        margin: 20px 0 10px;
-        padding: 20px 0;
-        .font{
-            color:#A8AAAD;
-            cursor: pointer;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 10px;
-            padding-bottom: 10px;
-            &:hover{
-                color:#dcddde;
-            }
-        }
-
     }
 
 }

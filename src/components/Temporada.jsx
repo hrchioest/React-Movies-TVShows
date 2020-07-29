@@ -1,6 +1,6 @@
 import React from "react";
-import img from "./img_tem.jpg";
-import "./temporada.scss";
+import img from "../images/img_tem.jpg";
+import "../sass/components/temporada.scss";
 
 const Temporada = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
-import '../Style/Movies.scss';
-import Hero from '../Components/Hero';
-import MenuHero from '../Components/MenuHero';
-import MovieInfo from '../Components/MovieInfo';
+import '../sass/sections/Movies.scss';
+import Hero from '../components/Hero';
+import MenuHero from '../components/MenuHero';
+import MovieInfo from '../components/MovieInfo';
 
 const Movies = () =>{
     return(

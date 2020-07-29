@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.scss";
-import Header from "./Sections/Header";
-import Home from "./Sections/Home";
+import Header from "./sections/Header";
+import Home from "./sections/Home";
 import "./App.css";
-import Movies from "./Sections/Movies";
-import Temporadas from "./Sections/Temporadas";
-import Videos from "./Sections/Videos";
+import Movies from "./sections/Movies";
+import Temporadas from "./sections/Temporadas";
+import Videos from "./sections/Videos";
 
 function App() {
   return (
     <div className='App'>
-      <Header />
+      <Header/>
       <Home />
       <Movies />
       <Temporadas />

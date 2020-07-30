@@ -1,6 +1,7 @@
 import React from "react";
+
 import Video from "../Components/Video";
-import "../Sass/sections/videos.scss";
+import "../sass/sections/videos.scss";
 
 const Videos = () => {
   return (

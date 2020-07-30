@@ -1,12 +1,13 @@
 import React from "react";
-import img from "../Images/img_tem.jpg";
-import "../Sass/components/temporada.scss";
+
+import img from "../images/img_tem.jpg";
+import "../sass/components/temporada.scss";
 
 const Temporada = () => {
   return (
     <div className='temporada'>
       <div className='img'>
-        <img src={img} alt="img"/>
+        <img src={img} alt='img' />
       </div>
       <div className='titles'>
         <p className='episodio'>EP01</p>

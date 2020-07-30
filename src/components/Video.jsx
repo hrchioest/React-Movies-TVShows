@@ -1,5 +1,6 @@
 import React from "react";
 import YouTube from "react-youtube";
+
 import "../sass/components/video.scss";
 
 const Video = () => {

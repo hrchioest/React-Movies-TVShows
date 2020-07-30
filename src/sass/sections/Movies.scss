@@ -1,11 +1,13 @@
-.container-section{
-    background-color: rgb(54, 57, 63);
-    box-sizing: border-box;
-    padding-bottom: 60px;
+@import "../common/mixin";
+
+.container-section {
+  padding-bottom: 60px;
+  background-color: rgb(54, 57, 63);
+  box-sizing: border-box;
 }
 
-p{
-    color: rgb(220, 221, 222);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+p {
+  color: rgb(220, 221, 222);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }

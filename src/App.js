@@ -1,16 +1,18 @@
 import React from "react";
-import "./App.scss";
+
 import Header from "./sections/Header";
 import Home from "./sections/Home";
-import "./App.css";
+
 import Movies from "./sections/Movies";
 import Temporadas from "./sections/Temporadas";
 import Videos from "./sections/Videos";
 
+import "./App.scss";
+
 function App() {
   return (
     <div className='App'>
-      <Header/>
+      <Header />
       <Home />
       <Movies />
       <Temporadas />
@@ -20,3 +22,9 @@ function App() {
 }
 
 export default App;
+
+/*
+import Movies from "./sections/Movies";
+import Temporadas from "./sections/Temporadas";
+import Videos from "./sections/Videos";
+*/

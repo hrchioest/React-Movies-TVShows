@@ -1,6 +1,6 @@
 import React from "react";
 
-import Temporada from "../Components/Temporada";
+import Temporada from "../components/Temporada";
 import "../sass/sections/temporadas.scss";
 
 const Temporadas = () => {

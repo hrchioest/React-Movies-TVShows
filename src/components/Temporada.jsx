@@ -6,7 +6,7 @@ const Temporada = () => {
   return (
     <div className='temporada'>
       <div className='img'>
-        <img src={img} />
+        <img src={img} alt="img"/>
       </div>
       <div className='titles'>
         <p className='episodio'>EP01</p>

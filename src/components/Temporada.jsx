@@ -1,5 +1,4 @@
 import React from "react";
-
 import img from "../images/img_tem.jpg";
 import "../sass/components/temporada.scss";
 

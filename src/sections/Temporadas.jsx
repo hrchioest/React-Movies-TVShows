@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import Temporada from "../components/Temporada";
 import "../sass/sections/temporadas.scss";

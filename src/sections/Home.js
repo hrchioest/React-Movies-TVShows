@@ -17,7 +17,7 @@ const Home = () => {
 
                 </a>
                 <div className="card-list-container">
-                    <Card />
+                    <ListCard />
                 </div>
             </div>
 

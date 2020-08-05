@@ -1,4 +1,5 @@
 @import "../common/mixin";
+@import "../common/variables";
 
 #header-nav {
   background-color: $menu;
@@ -71,6 +72,7 @@
 .icons-nav {
   font-size: 20px;
   color: $text;
+  outline: none;
   .icons-nav:active {
     color: $accent;
   }

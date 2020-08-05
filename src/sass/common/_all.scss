@@ -2,14 +2,14 @@
 @import "../common/variables";
 
 @import "../sections/header";
-@import "../sections/home";
+@import "../sections/Main-pages";
 @import "../sections/Footer.scss";
 @import "../sections/MovieInfo.scss";
 @import "../sections/Movies.scss";
 @import "../sections/temporadas.scss";
 @import "../sections/videos.scss";
 
-@import "../components/_card.scss";
+@import "../components/Card.scss";
 @import "../components/Hero.scss";
 @import "../components/temporada.scss";
 @import "../components/video.scss";

@@ -22,9 +22,3 @@ function App() {
 }
 
 export default App;
-
-/*
-import Movies from "./sections/Movies";
-import Temporadas from "./sections/Temporadas";
-import Videos from "./sections/Videos";
-*/

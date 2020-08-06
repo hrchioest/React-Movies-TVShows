@@ -1,6 +1,6 @@
 import React from 'react';
 import "../sass/sections/Header.scss";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from '@fortawesome/free-solid-svg-icons';
@@ -14,19 +14,19 @@ const Header = () => {
       <div className='access-nav'>
           <ul>
             <li>
-              <Link to="/">
+              <NavLink to="/" exact activeClassName="active-access">
                 <FontAwesomeIcon className='icons-nav' icon={faHome} />
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/Movie">
+              <NavLink to="/Movie" activeClassName="active-access">
                 <FontAwesomeIcon className='icons-nav' icon={faVideo} />
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/Tv">
+              <NavLink to="/Tv" activeClassName="active-access">
                 <FontAwesomeIcon className='icons-nav' icon={faTv} />
-              </Link>
+              </NavLink>
             </li>
           </ul>
       </div>

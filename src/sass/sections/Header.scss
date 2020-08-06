@@ -73,10 +73,13 @@
   font-size: 20px;
   color: $text;
   outline: none;
-  .icons-nav:active {
-    color: $accent;
-  }
   @include phone {
     font-size: 25px;
+  }
+}
+
+.active-access {
+  .icons-nav {
+    color: $accent;
   }
 }

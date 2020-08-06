@@ -6,25 +6,21 @@ import Home from "./sections/Home";
 import Movies from "./sections/Movies";
 import Temporadas from "./sections/Temporadas";
 import Videos from "./sections/Videos";
+import './App.css';
 
-import "./App.scss";
+
 
 function App() {
   return (
     <div className='App'>
       <Header />
-      <Home />
-      <Movies />
-      <Temporadas />
-      <Videos />
+        <Home />
+        <Movies />
+        <Temporadas />
+        <Videos />
     </div>
   );
 }
 
 export default App;
 
-/*
-import Movies from "./sections/Movies";
-import Temporadas from "./sections/Temporadas";
-import Videos from "./sections/Videos";
-*/

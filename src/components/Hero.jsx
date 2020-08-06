@@ -1,5 +1,5 @@
 import React from "react";
-import "../sass/components/Hero.scss";
+import "../sass/components/hero.scss";
 import poster from "../images/charlize.jpeg";
 
 const Hero = () => {

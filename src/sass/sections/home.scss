@@ -21,6 +21,7 @@
       font-weight: 300;
       color: $text;
       margin: 25px 0 25px 0;
+      text-align: initial;
       @include phone {
         font-size: 20px;
       }

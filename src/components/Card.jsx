@@ -1,4 +1,5 @@
 import React from "react";
+import "../sass/components/card.scss";
 
 const Card = () => {
   return (

@@ -1,5 +1,6 @@
-@import "../common/mixin";
 
+@import "../common/variables.scss";
+@import "../common/mixin.scss";
 #card {
   width: 20%;
   max-width: 450px;

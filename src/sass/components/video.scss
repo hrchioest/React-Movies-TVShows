@@ -1,4 +1,5 @@
-@import "../common/mixin";
+@import "../common/mixin.scss";
+@import "../common/variables.scss";
 
 .youtube {
   @media (min-width: 1025px) {

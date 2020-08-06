@@ -1,4 +1,5 @@
-@import "../common/mixin";
+@import "../common/mixin.scss";
+@import "../common/variables.scss";
 
 #header-nav {
   background-color: $menu;

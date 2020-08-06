@@ -1,4 +1,5 @@
-@import "../common/mixin";
+@import "../common/mixin.scss";
+@import "../common/variables.scss";
 
 .temporada {
   width: calc(33.3333% - 13.3333px);

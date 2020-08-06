@@ -1,4 +1,5 @@
-@import "../common/mixin";
+@import "../common/mixin.scss";
+@import "../common/variables.scss";
 
 #home {
   width: calc(100% - 10%);
@@ -13,11 +14,12 @@
   height: 600px;
   margin-bottom: 50px;
   a {
-    color: $text;
+    
     text-decoration: none;
     h2 {
       font-size: 32px;
       font-weight: 300;
+      color: $text;
       margin: 25px 0 25px 0;
       @include phone {
         font-size: 20px;

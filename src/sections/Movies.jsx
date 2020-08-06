@@ -1,5 +1,5 @@
 import React from 'react';
-import '../sass/sections/Movies.scss';
+import '../sass/sections/movies.scss';
 import Hero from '../components/Hero';
 import MenuHero from '../components/MenuHero';
 import MovieInfo from '../components/MovieInfo';

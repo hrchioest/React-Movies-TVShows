@@ -1,10 +1,10 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({ result }) => {
   return (
     <div id='card'>
-      <div className='img-card'></div>
-      <h3 className='card-title'>Blade Runner</h3>
+      <img alt="foto" src={result.poster_path}/>
+      <h3 className='card-title'>{result.title}</h3>
     </div>
   );
 };

@@ -15,5 +15,3 @@ const Movies = () =>{
 }
 
 export default Movies; 
-
-//no va <br>

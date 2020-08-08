@@ -1,12 +1,12 @@
 import React from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faVideo } from "@fortawesome/free-solid-svg-icons";
 import { faTv } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Header = () => {
+const Header = ( { handleInput, search } ) => {
+
   return (
     <nav id='header-nav'>
       <div className='access-nav'>
@@ -24,7 +24,7 @@ const Header = () => {
       </div>
       <div className='searcher-nav'>
         <FontAwesomeIcon className='icons-nav' icon={faSearch} />
-        <input type='text' placeholder='Búsqueda...' />
+        <input type='text' placeholder='Búsqueda...' onChange={handleInput} onKeyPress={search}/>
       </div>
     </nav>
   );

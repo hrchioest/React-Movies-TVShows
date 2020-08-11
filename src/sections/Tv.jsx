@@ -2,7 +2,7 @@ import React from 'react';
 import Card from "../components/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import "../sass/sections/Main-pages.scss";
+import "../sass/sections/main-pages.scss";
 
 const Tv = () => {
     return (

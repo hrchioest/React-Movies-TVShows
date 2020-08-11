@@ -5,6 +5,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faVideo } from "@fortawesome/free-solid-svg-icons";
 import { faTv } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -12,13 +13,19 @@ const Header = () => {
       <div className='access-nav'>
         <ul>
           <li>
-            <FontAwesomeIcon className='icons-nav' icon={faHome} />
+            <NavLink to="/" exact activeClassName="active-access" >
+              <FontAwesomeIcon className='icons-nav' icon={faHome} />
+            </NavLink>
           </li>
           <li>
-            <FontAwesomeIcon className='icons-nav' icon={faVideo} />
+            <NavLink to="/movie" exact activeClassName="active-access" >
+              <FontAwesomeIcon className='icons-nav' icon={faVideo} />
+            </NavLink>
           </li>
           <li>
-            <FontAwesomeIcon className='icons-nav' icon={faTv} />
+            <NavLink to="/tv" exact activeClassName="active-access" >
+              <FontAwesomeIcon className='icons-nav' icon={faTv} />
+            </NavLink>
           </li>
         </ul>
       </div>

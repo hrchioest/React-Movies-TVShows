@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from "../components/Card";
-import "../sass/sections/Main-pages.scss";
+import "../sass/sections/main-pages.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 

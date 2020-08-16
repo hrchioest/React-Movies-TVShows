@@ -8,20 +8,20 @@
     margin: 20px 0 10px;
     padding: 20px 0;
     .tab{
-        text-decoration:none;
         color:#A8AAAD;
         cursor: pointer;
         font-size: 20px;
         font-weight: bold;
         margin: 10px;
         padding-bottom: 10px;
+        text-decoration:none;
         &:hover{
             color:#dcddde;
         }
     }
     .selected{
-        color:#dcddde;
         border-bottom: 2px solid rgb(220, 221, 222);
+        color:#dcddde;
     }
 }
 

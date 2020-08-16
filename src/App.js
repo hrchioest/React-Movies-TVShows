@@ -17,7 +17,7 @@ function App() {
           <Route path="/tv" component={Tv} />
         </Switch>
       </div>
-      <Movies></Movies>
+      <Movies/>
     </Router>
   );
 }

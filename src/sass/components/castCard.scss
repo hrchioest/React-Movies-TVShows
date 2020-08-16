@@ -1,0 +1,51 @@
+@import "../common/mixin.scss";
+@import "../common/variables.scss";
+
+h3, h4{
+    font-weight: 300;
+    font-size:16px;
+    color:#dcddde;
+}
+
+.container-castC{
+    margin-bottom: 20px;
+    padding: 0 4px;
+    box-sizing: border-box;
+    position: relative;
+    @include phone{
+        width: calc(50%);
+    }
+    @include tablet{
+        width: calc(33.33%);
+    }
+    @include desktop{
+        width: calc(25%);
+    }
+    a{
+        text-decoration: none;
+        cursor: pointer;
+        .cast-imgn{
+            overflow: hidden;
+            .cst-poster{
+                height: auto;
+                transform: scale(1);
+                opacity: 1;
+                width: 100%;
+                transition: all 0.3s ease 0s, height 0s ease 0s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .txt{
+            margin-bottom: 5px;
+            transition: all 0.3s ease 0s;
+            &:hover{
+                color:#FFFFFF;
+            }
+        }
+        .character{
+            margin-top: 0;
+        }        
+    }
+}

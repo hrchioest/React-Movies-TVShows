@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from './Card';
+import Result from "./Result";
 
 const Results = ({ results }) =>{
     return(
         <div className="results">
             {results.map(result =>(
-                <Card result={result} />
+                <Result result={result} />
             ))}
         </div>
     )

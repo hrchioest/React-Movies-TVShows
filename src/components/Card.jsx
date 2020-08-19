@@ -1,7 +1,7 @@
 import React from 'react';
 import "../sass/components/_card.scss";
 
-const Card = ({ result }) =>{
+const Card = () =>{
     return(
         <div className="container-result">
             <img/>

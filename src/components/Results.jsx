@@ -5,10 +5,11 @@ const Results = ({ results }) =>{
     return(
         <div className="results">
             {results.map(result =>(
-                <Result result={result} />
+                <Result result={result} />  //aca tendria que ser <Card
             ))}
         </div>
     )
 }
 
 export default Results;
+

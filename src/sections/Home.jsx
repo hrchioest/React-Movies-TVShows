@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Card from "../components/Card";
 import axios from "axios";
+
 import "../sass/sections/main-pages.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { movieTrending, trendingTv } from "../service/index";
-
 
 const Home = () => {
 
@@ -29,6 +29,8 @@ const Home = () => {
   },
     []
   );
+
+const Home = props => {
 
   return (
     <section id="main-page">

@@ -7,8 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { movieTrending, trendingTv } from "../service/index";
 
-const Home = () => {
-
+  
+const Home = props => {
   const [trendMovies, setTrendMovies] = useState([]);
   const [trendTv, setTrendTv] = useState([]);
 
@@ -29,8 +29,6 @@ const Home = () => {
   },
     []
   );
-
-const Home = props => {
 
   return (
     <section id="main-page">
@@ -77,7 +75,7 @@ const Home = props => {
       </div>
     </section>
   )
-};
+}
 
 export default Home;
 

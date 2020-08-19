@@ -8,7 +8,7 @@ const Results = ({ results }) =>{
                 <Result result={result} />  //aca tendria que ser <Card
             ))}
         </div>
-    )
+    );
 }
 
 export default Results;

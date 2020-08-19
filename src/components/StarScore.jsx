@@ -1,6 +1,6 @@
 import React from "react";
 
-const StarScore = () => {
+const StarScore = ({score}) => {
  
     const cantStar = (score /2);
     const cantStarInt = parseInt(cantStar);

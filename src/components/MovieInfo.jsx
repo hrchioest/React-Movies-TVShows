@@ -1,6 +1,7 @@
 import React from 'react';
 import img from '../images/laviejaguardia.jpg';
 import '../sass/components/movieInfo.scss';
+import StarScore from './StarScore';
 
 const MovieInfo = () =>{
     return(
@@ -12,7 +13,7 @@ const MovieInfo = () =>{
                 <div className="container-text">
                     <h2 className="title-movie">The Old Guard</h2>
                     <div className="rating-movie">
-                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <StarScore score={0}></StarScore>
                     </div>
                     <p className="description-movie">Nunc felis leo, pulvinar vel diam ac, finibus bibendum eros. Suspendisse blandit leo vel fermentum ultrices. Proin sodales scelerisque nulla, et pulvinar turpis consequat nec.uspendisse blandit leo vel fermentum ultrices. Proin sodales scelerisque nulla, et pulvinar turpis consequat nec.</p>
                     <p className="duration-movie mgn-top">Duración: 124min</p>

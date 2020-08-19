@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-
-
-const Star = () => {
-    const score =0;
+const StarScore = () => {
+ 
     const cantStar = (score /2);
     const cantStarInt = parseInt(cantStar);
     const cantStarEmpty = (5-cantStar);
@@ -31,4 +29,4 @@ const Star = () => {
     )
 }
 
-export default Star;
+export default StarScore;

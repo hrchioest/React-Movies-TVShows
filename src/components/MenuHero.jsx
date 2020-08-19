@@ -34,4 +34,4 @@ const MenuHero = () =>{
     )
 }
 
-export default MenuHero
+export default MenuHero;

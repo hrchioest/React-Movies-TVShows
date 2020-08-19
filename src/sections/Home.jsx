@@ -1,28 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from "../components/Card";
-//import axios from "axios";
+import axios from "axios";
 import "../sass/sections/main-pages.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useState } from 'react';
+import { movieTrending, trendingTv } from "../service/index";
 
-const Home = props => {
-/*  const url =  "https://api.themoviedb.org/3";
-  const apiKey = "b28a6d7a756aac4ded04e3b860e94284";
 
-  const [movies, setMovies] = useState([]);
-  
-  componentDidMount(); {
-    axios.get("https://api.themoviedb.org/3/trending/movie/week?api_key=b28a6d7a756aac4ded04e3b860e94284")
+const Home = () => {
+
+  const [trendMovies, setTrendMovies] = useState([]);
+  const [trendTv, setTrendTv] = useState([]);
+
+  useEffect(() => {
+    axios.get(movieTrending)
       .then(res => {
-        console.log(res)
-        //const movies = res;
-        //setMovies(movies);
-      }).catch()
-  }
+        setTrendMovies(res.data.results);
+      }).catch(error => console.log(error))
+  },
+    []
+  );
 
+  useEffect(() => {
+    axios.get(trendingTv)
+      .then(res => {
+        setTrendTv(res.data.results);
+      }).catch(error => console.log(error))
+  },
+    []
+  );
 
-*/
   return (
     <section id="main-page">
       <div className='list-main-page'>
@@ -33,6 +40,15 @@ const Home = props => {
           </h2>
         </a>
         <div className='card-list-container'>
+
+          {trendMovies.map((movie, i) => {
+            if (i < 5) {
+              return (
+                <Card key={i} image={movie.poster_path} title={movie.title} />
+              )
+            }
+          })
+          }
 
         </div>
       </div>
@@ -45,20 +61,21 @@ const Home = props => {
           </h2>
         </a>
         <div className='card-list-container'>
-          <Card />
+
+          {trendTv.map((tv, i) => {
+            if (i < 5) {
+              return (
+                <Card key={i} image={tv.poster_path} title={tv.name} />
+              )
+            }
+          })
+          }
         </div>
+
       </div>
     </section>
-  );
+  )
 };
 
 export default Home;
 
-
-/*
-          {props.movies.map((movie, i) => {
-            return (
-              <Card key={i} image={movie.poster_path} />
-            )})
-          }
-*/

@@ -1,10 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 import Card from "../components/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "../sass/sections/main-pages.scss";
+import { tvPopular, tvTopRated, tvNow } from "../service/index";
 
 const Tv = () => {
+
+    const [popularTv, setPopularTv] = useState([]);
+    const [topTv, setTopTv] = useState([]);
+    const [nowTv, setNowTv] = useState([]);
+
+   useEffect(() => {
+    axios.get(tvPopular)
+        .then(res => {
+            setPopularTv(res.data.results);
+        }).catch(error => console.log(error))
+},
+    []
+);
+
+useEffect(() => {
+    axios.get(tvTopRated)
+        .then(res => {
+            setTopTv(res.data.results);
+        }).catch(error => console.log(error))
+},
+    []
+);
+
+useEffect(() => {
+    axios.get(tvNow)
+        .then(res => {
+            setNowTv(res.data.results);
+        }).catch(error => console.log(error))
+},
+    []
+);
+
     return (
         <section id="main-page">
             <div className='list-main-page'>
@@ -15,7 +49,16 @@ const Tv = () => {
                     </h2>
                 </a>
                 <div className='card-list-container'>
-                    <Card />
+                    
+                {popularTv.map((tv, i) => {
+                        if (i < 5) {
+                            return (
+                                <Card key={i} image={tv.poster_path} title={tv.name} />
+                            )
+                        }
+                    })
+                    }
+
                 </div>
             </div>
 
@@ -27,7 +70,16 @@ const Tv = () => {
                     </h2>
                 </a>
                 <div className='card-list-container'>
-                    <Card />
+                    
+                {topTv.map((tv, i) => {
+                        if (i < 5) {
+                            return (
+                                <Card key={i} image={tv.poster_path} title={tv.name} />
+                            )
+                        }
+                    })
+                    }
+                    
                 </div>
             </div>
 
@@ -39,7 +91,16 @@ const Tv = () => {
                     </h2>
                 </a>
                 <div className='card-list-container'>
-                    <Card />
+                    
+                {nowTv.map((tv, i) => {
+                        if (i < 5) {
+                            return (
+                                <Card key={i} image={tv.poster_path} title={tv.name} />
+                            )
+                        }
+                    })
+                    }
+                    
                 </div>
             </div>
         </section>

@@ -1,14 +1,41 @@
 
-import axios from 'axios';
+export const movieTrending = "https://api.themoviedb.org/3/trending/movie/week?api_key=b28a6d7a756aac4ded04e3b860e94284";
+export const trendingTv = "https://api.themoviedb.org/3/trending/tv/week?api_key=b28a6d7a756aac4ded04e3b860e94284";
 
-const apiKey = 'b28a6d7a756aac4ded04e3b860e94284';
-const url = 'https://api.themoviedb.org/3';
-const nowPlayingUrl = `${url}/movie/now_playing`;
-const topratedUrl = `${url}/movie/top_rated`;
-const movieUrl = `${url}/movie`;
-const genreUrl = `${url}/genre/movie/list`;
-const moviesUrl = `${url}/discover/movie`;
-const personUrl = `${url}/trending/person/week`;
+export const moviePopular = "https://api.themoviedb.org/3/movie/popular?api_key=b28a6d7a756aac4ded04e3b860e94284";
+export const movieTopRated = "https://api.themoviedb.org/3/movie/top_rated?api_key=b28a6d7a756aac4ded04e3b860e94284";
+export const movieUpcoming = "https://api.themoviedb.org/3/movie/upcoming?api_key=b28a6d7a756aac4ded04e3b860e94284";
+export const movieNow = "https://api.themoviedb.org/3/movie/now_playing?api_key=b28a6d7a756aac4ded04e3b860e94284";
+
+export const tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=b28a6d7a756aac4ded04e3b860e94284";
+export const tvTopRated = "https://api.themoviedb.org/3/tv/top_rated?api_key=b28a6d7a756aac4ded04e3b860e94284";
+export const tvNow = "https://api.themoviedb.org/3/tv/on_the_air?api_key=b28a6d7a756aac4ded04e3b860e94284";
+
+
+/*
+export const topRatedMovies = async () => {
+    try {
+        const { data } = await axios.get(topMovieUrl)
+        const posterUrl = 'https://image.tmdb.org/t/p/original/';
+        const modifiedData = data.results.map((m) => ({
+            id: m['id'],
+            title: m['title'],
+            poster: posterUrl + m['poster_path']
+        }))
+        return modifiedData;
+    }
+    catch (error) { }
+}
+
+  useEffect(() => {
+    const fetchAPI = async () => {
+      setMovies(await moviesTopRated());
+    };
+
+    fetchAPI();
+  }, []);
+
+
 
 export const fetchMovies = async () => {
     try {
@@ -183,4 +210,4 @@ export const fetchSimilarMovie = async (id) => {
 
         return modifiedData;
     } catch (error) { }
-}
+}*/

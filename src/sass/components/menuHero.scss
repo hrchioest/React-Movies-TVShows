@@ -2,6 +2,8 @@
 @import "../common/variables.scss";
 
 .menu-container{
+    align-items: flex-start;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
@@ -18,6 +20,7 @@
         &:hover{
             color:#dcddde;
         }
+
     }
     .selected{
         border-bottom: 2px solid rgb(220, 221, 222);

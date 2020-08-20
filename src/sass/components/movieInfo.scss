@@ -2,10 +2,10 @@
 @import "../common/mixin.scss";
 @import "../common/variables.scss";
 .all {
-  max-width: 1400px;
+  box-sizing: border-box;
+  max-width: 2400px;
   padding: 20px;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .container-movie {

@@ -1,11 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from "../components/Card";
+import axios from "axios";
+
 import "../sass/sections/main-pages.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useState } from 'react';
+import { movieTrending, trendingTv } from "../service/index";
 
+  
 const Home = props => {
+  const [trendMovies, setTrendMovies] = useState([]);
+  const [trendTv, setTrendTv] = useState([]);
+
+  useEffect(() => {
+    axios.get(movieTrending)
+      .then(res => {
+        setTrendMovies(res.data.results);
+      }).catch(error => console.log(error))
+  },
+    []
+  );
+
+  useEffect(() => {
+    axios.get(trendingTv)
+      .then(res => {
+        setTrendTv(res.data.results);
+      }).catch(error => console.log(error))
+  },
+    []
+  );
 
   return (
     <section id="main-page">
@@ -17,7 +40,16 @@ const Home = props => {
           </h2>
         </a>
         <div className='card-list-container'>
-         <Card />
+
+          {trendMovies.map((movie, i) => {
+            if (i < 5) {
+              return (
+                <Card key={i} image={movie.poster_path} title={movie.title} />
+              )
+            }
+          })
+          }
+
         </div>
       </div>
 
@@ -29,13 +61,21 @@ const Home = props => {
           </h2>
         </a>
         <div className='card-list-container'>
-          <Card />
+
+          {trendTv.map((tv, i) => {
+            if (i < 5) {
+              return (
+                <Card key={i} image={tv.poster_path} title={tv.name} />
+              )
+            }
+          })
+          }
         </div>
+
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default Home;
-
 

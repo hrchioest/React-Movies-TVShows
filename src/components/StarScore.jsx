@@ -1,7 +1,7 @@
 import React from "react";
 
-const StarScore = (score) => {
-    
+const StarScore = ({score}) => {
+ 
     const cantStar = (score /2);
     const cantStarInt = parseInt(cantStar);
     const cantStarEmpty = (5-cantStar);

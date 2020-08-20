@@ -3,7 +3,6 @@ import Header from "./sections/Header";
 import Home from "./sections/Home";
 import Movie from "./sections/Movie";
 import Tv from "./sections/Tv";
-import Movies from "./sections/Movies"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
           <Route path="/tv" component={Tv} />
         </Switch>
       </div>
-      <Movies/>
     </Router>
   );
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import "../sass/components/menuHero.scss";
 import MovieInfo from "./MovieInfo";
-import Cast from "./Cast";
 import Video from "./Video";
 import Similar from "./Similar";
 import { NavLink } from 'react-router-dom';
@@ -14,9 +13,6 @@ const MenuHero = () =>{
                 <NavLink to="/info" exact activeClassName="selected" className="tab info">
                     INFO
                 </NavLink>
-                <NavLink to="/cast" exact activeClassName="selected" className="tab cast">
-                    REPARTO
-                </NavLink>
                 <NavLink to="/videos" exact activeClassName="selected" className="tab vid">
                     VIDEOS
                 </NavLink>
@@ -25,7 +21,6 @@ const MenuHero = () =>{
                 </NavLink>
                 <Switch>
                     <Route exact path="/info" component={MovieInfo} />
-                    <Route path="/cast" component={Cast} />
                     <Route path="/videos" component={Video} />
                     <Route path="/similar" component={Similar} />
                 </Switch>

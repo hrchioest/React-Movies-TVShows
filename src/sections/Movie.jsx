@@ -10,7 +10,7 @@ const Movie = () => {
             <ListCard title="Peliculas con mejores críticas" limit={5} api={movieTopRated} link ="/movieTopRated/trending" />
             <ListCard title="Películas a estrenarse" limit={5} api={movieUpcoming} link ="/movieUpcoming/trending" />
             <ListCard title="Películas en cines" limit={5} api={movieNow} link ="/movieNow/trending" />
-    </>
+        </>
   )
 
 }

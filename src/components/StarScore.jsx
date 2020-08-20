@@ -12,7 +12,6 @@ const StarScore = ({score}) => {
         stars.push(<i class="fas fa-star-half-alt"></i>);
     } 
 
-
     for(let i=1; i<=cantStarInt; i++ ){
         stars.push(<i class="fas fa-star"></i>)
     }

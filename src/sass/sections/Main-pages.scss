@@ -7,7 +7,6 @@
     background-color: $background;
     font-family: $roboto;
     color: $text;
-    padding: 20px 0 100px 0;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -20,7 +19,6 @@
 .list-main-page {
     width: 100%;
     max-width: 1400px;
-    height: 600px;
     overflow: hidden;
     padding: 20px;
     box-sizing: border-box;

@@ -30,53 +30,52 @@ const Home = () => {
     []
   );
 
-const Home = props => {
 
-  return (
-    <section id="main-page">
-      <div className='list-main-page'>
-        <a href='#'>
-          <h2>
-            Películas que son tendencia
+    return (
+      <section id="main-page">
+        <div className='list-main-page'>
+          <a href='#'>
+            <h2>
+              Películas que son tendencia
             <FontAwesomeIcon className='arrow-list' icon={faArrowRight} />
-          </h2>
-        </a>
-        <div className='card-list-container'>
+            </h2>
+          </a>
+          <div className='card-list-container'>
 
-          {trendMovies.map((movie, i) => {
-            if (i < 5) {
-              return (
-                <Card key={i} image={movie.poster_path} title={movie.title} />
-              )
+            {trendMovies.map((movie, i) => {
+              if (i < 5) {
+                return (
+                  <Card key={i} image={movie.poster_path} title={movie.title} />
+                )
+              }
+            })
             }
-          })
-          }
 
-        </div>
-      </div>
-
-      <div className='list-main-page'>
-        <a href='#'>
-          <h2>
-            Series que son tendencia
-            <FontAwesomeIcon className='arrow-list' icon={faArrowRight} />
-          </h2>
-        </a>
-        <div className='card-list-container'>
-
-          {trendTv.map((tv, i) => {
-            if (i < 5) {
-              return (
-                <Card key={i} image={tv.poster_path} title={tv.name} />
-              )
-            }
-          })
-          }
+          </div>
         </div>
 
-      </div>
-    </section>
-  )
+        <div className='list-main-page'>
+          <a href='#'>
+            <h2>
+              Series que son tendencia
+            <FontAwesomeIcon className='arrow-list' icon={faArrowRight} />
+            </h2>
+          </a>
+          <div className='card-list-container'>
+
+            {trendTv.map((tv, i) => {
+              if (i < 5) {
+                return (
+                  <Card key={i} image={tv.poster_path} title={tv.name} />
+                )
+              }
+            })
+            }
+          </div>
+
+        </div>
+      </section>
+    )
 };
 
 export default Home;

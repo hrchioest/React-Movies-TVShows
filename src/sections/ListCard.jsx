@@ -21,7 +21,7 @@ const ListCard = ({title, limit = 0, api, link}) =>{
     return (
         <section id="main-page">
             <div className='list-main-page'>
-                <a href='#'>
+                <a href={link}>
                     <h2>
                         {title}
                         {link? <Link to={link}><FontAwesomeIcon className='arrow-list' icon={faArrowRight} /></Link>:""}  

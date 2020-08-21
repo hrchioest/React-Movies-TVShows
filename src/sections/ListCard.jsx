@@ -31,7 +31,7 @@ const ListCard = ({title, limit = 0, api, link}) =>{
                     {list.map((movie, i) => {
                         if (i < limit || limit === 0) {
                         return (
-                            <Card key={i} image={movie.poster_path} title={movie.title} />
+                            <Card key={i} image={movie.poster_path} title={movie.title || movie.name} />
                         )
                         }
                     })

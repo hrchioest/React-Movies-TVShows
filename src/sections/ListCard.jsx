@@ -11,12 +11,12 @@ import { Link } from 'react-router-dom';
 const ListCard = ({title, limit = 0, api, link}) =>{
     const [list, setList] = useState([]);
 
-  useEffect(() => {
-    axios.get(api)  
-      .then(res => {
-        setList(res.data.results);
-      }).catch(error => console.log(error))
-  },[]);
+    useEffect(() => {
+        axios.get(api)  
+        .then(res => {
+            setList(res.data.results);
+        }).catch(error => console.log(error))
+    },[]);
     
     return (
         <section id="main-page">

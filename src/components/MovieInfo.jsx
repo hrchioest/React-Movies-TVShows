@@ -4,6 +4,7 @@ import '../sass/components/movieInfo.scss';
 import StarScore from './StarScore';
 
 const MovieInfo = () =>{
+
     return(
         <div className="all">
             <div className="container-movie">

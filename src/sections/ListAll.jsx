@@ -1,7 +1,6 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
-  
-import ListCard from './ListCard'
+import ListCard from './ListCard';
 import { movieTrending, trendingTv, moviePopular, movieTopRated, movieUpcoming, movieNow, tvPopular, tvTopRated, tvNow} from "../service/index";
 
 const sections = {

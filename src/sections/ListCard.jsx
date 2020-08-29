@@ -1,15 +1,17 @@
 import React,{ useEffect, useState } from 'react';
-import Card from '../components/Card';
-import "../sass/sections/main-pages.scss";
+
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
 
-
+import Pagination from '../components/Pagination';
+import Card from '../components/Card';
+import "../sass/sections/main-pages.scss";
 
 const ListCard = ({title, limit = 0, api, link}) =>{
     const [list, setList] = useState([]);
+
 
   useEffect(() => {
     axios.get(api)  
@@ -17,7 +19,8 @@ const ListCard = ({title, limit = 0, api, link}) =>{
         setList(res.data.results);
       }).catch(error => console.log(error))
   },[]);
-    
+
+    console.log(link)
     return (
         <section id="main-page">
             <div className='list-main-page'>
@@ -39,6 +42,8 @@ const ListCard = ({title, limit = 0, api, link}) =>{
 
                 </div>
             </div>
+
+                { !limit && <Pagination currentPage={ list.page } /> }
         </section>
     )
 }

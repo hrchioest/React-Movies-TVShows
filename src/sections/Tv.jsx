@@ -8,9 +8,9 @@ const Tv = () => {
 
     return(
         <>
-            <ListCard title="Series populares" limit={5} api={tvPopular} link ="/tvPopular/trending" />
-            <ListCard title="Series con más críticas" limit={5} api={tvTopRated} link ="/tvTopRated/trending" />
-            <ListCard title="Series al aire" limit={5} api={tvNow} link ="/tvNow/trending" />
+            <ListCard title="Series populares" limit={5} api={tvPopular} link ="/tvPopular/trending/page/1" />
+            <ListCard title="Series con más críticas" limit={5} api={tvTopRated} link ="/tvTopRated/trending/page/1" />
+            <ListCard title="Series al aire" limit={5} api={tvNow} link ="/tvNow/trending/page/1" />
         </>
     )
 }

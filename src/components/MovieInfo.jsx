@@ -3,9 +3,10 @@ import axios from "axios";
 import '../sass/components/movieInfo.scss';
 //import StarScore from './StarScore';
 
-const MovieInfo = () => {
+const MovieInfo = (props) => {
 
-    let { id } = useParams();
+    //console.log(match);
+    //let { id } = useParams();
 
         return (
             <div className="all">
@@ -15,7 +16,7 @@ const MovieInfo = () => {
                     </div>
                     <div className="container-text">
     
-                        <h2 className="title-movie">{id}</h2>
+                        <h2 className="title-movie">{props.id} {props.title}</h2>
                         <div className="rating-movie">
                             
                         </div>

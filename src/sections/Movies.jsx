@@ -22,4 +22,3 @@ const Movies = props => {
 export default Movies; 
 
 
-//stars production, links redes soc

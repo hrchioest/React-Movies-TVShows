@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 import "../sass/components/menuHero.scss";
 import MovieInfo from "./MovieInfo";
-
+import Cast from "./Cast";
 import Video from "./Video";
 import Similar from "./Similar";
 import { NavLink } from 'react-router-dom';
@@ -34,6 +34,9 @@ const MenuHero = ({ id }) => {
                 <NavLink to={`/${id}/info`} activeClassName="selected" className="tab info">
                     INFO
                 </NavLink>
+                <NavLink to={`/${id}/reparto`} activeClassName="selected" className="tab vid">
+                    REPARTO
+                </NavLink>
                 <NavLink to={`/${id}/videos`} activeClassName="selected" className="tab vid">
                     VIDEOS
                 </NavLink>
@@ -41,7 +44,8 @@ const MenuHero = ({ id }) => {
                     SIMILARES
                 </NavLink>
                 <Switch>
-                    <Route exact path={`/:${id}/info`} component={ props=> <MovieInfo {...props} /> }/>
+                    <Route exact path={`/:${id}/info`} component={MovieInfo} id={`${id}`} title={movieData.title} />
+                    <Route path={`/:${id}/reparto`} component={Cast} />
                     <Route path={`/:${id}/videos`} component={Video} />
                     <Route path={`/:${id}/similar`} component={Similar} />
                 </Switch>

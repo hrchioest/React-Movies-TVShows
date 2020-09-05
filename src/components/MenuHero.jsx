@@ -44,7 +44,19 @@ const MenuHero = ({ id }) => {
                     SIMILARES
                 </NavLink>
                 <Switch>
-                    <Route exact path={`/:${id}/info`} component={MovieInfo} id={`${id}`} title={movieData.title} />
+                    <Route exact path={`/:${id}/info`} render={(props) => (
+                        <MovieInfo id={movieData.id} title={movieData.title}
+                                                     poster={movieData.poster_path}
+                                                     stars={movieData.vote_average}
+                                                     overview={movieData.overview}
+                                                     length={movieData.runtime}
+                                                     genres={movieData.genres}
+                                                     budget={movieData.budget}
+                                                     revenue={movieData.revenue}
+                                                     production={movieData.production_companies}
+                                                     imdb={movieData.imdb_id}
+                                                     />
+                    )} />
                     <Route path={`/:${id}/reparto`} component={Cast} />
                     <Route path={`/:${id}/videos`} component={Video} />
                     <Route path={`/:${id}/similar`} component={Similar} />

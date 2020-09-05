@@ -12,9 +12,7 @@ const Movies = props => {
 
     return (
         <div className="container-section">
-            <h1>{id}</h1>
             <MenuHero id={id}/>    
-        
         </div>
     )
 }

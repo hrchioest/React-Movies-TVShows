@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import "../sass/components/menuHero.scss";
 import MovieInfo from "./MovieInfo";
@@ -7,14 +7,9 @@ import Video from "./Video";
 import Similar from "./Similar";
 import { NavLink } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useEffect } from 'react';
+
 
 const MenuHero = ({ id }) => {
-
-    //    const { match } = props;
-    //  const movieId = match.params.id;
-
-    //let { id } = useParams();
 
     const [movieData, setMovieData] = useState([]);
 
@@ -22,7 +17,6 @@ const MenuHero = ({ id }) => {
         axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=b28a6d7a756aac4ded04e3b860e94284&language=es`)
             .then(res => {
                 setMovieData(res.data);
-                console.log(movieData)
             }).catch(error => console.log(error))
     }, []);
 
@@ -45,19 +39,22 @@ const MenuHero = ({ id }) => {
                 </NavLink>
                 <Switch>
                     <Route exact path={`/:${id}/info`} render={(props) => (
-                        <MovieInfo id={movieData.id} title={movieData.title}
-                                                     poster={movieData.poster_path}
-                                                     stars={movieData.vote_average}
-                                                     overview={movieData.overview}
-                                                     length={movieData.runtime}
-                                                     genres={movieData.genres}
-                                                     budget={movieData.budget}
-                                                     revenue={movieData.revenue}
-                                                     production={movieData.production_companies}
-                                                     imdb={movieData.imdb_id}
-                                                     />
+                        <MovieInfo id={movieData.id}
+                            title={movieData.title}
+                            poster={movieData.poster_path}
+                            stars={movieData.vote_average}
+                            overview={movieData.overview}
+                            length={movieData.runtime}
+                            genres={movieData.genres}
+                            budget={movieData.budget}
+                            revenue={movieData.revenue}
+                            production={movieData.production_companies}
+                        />
                     )} />
-                    <Route path={`/:${id}/reparto`} component={Cast} />
+                    <Route path={`/:${id}/reparto`} render={(props) => (
+                        <Cast id={movieData.id} />
+                    )}
+                    />
                     <Route path={`/:${id}/videos`} component={Video} />
                     <Route path={`/:${id}/similar`} component={Similar} />
                 </Switch>

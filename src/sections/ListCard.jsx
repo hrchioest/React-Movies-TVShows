@@ -7,7 +7,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
 
 
-
 const ListCard = ({title, limit = 0, api, link}) =>{
     const [list, setList] = useState([]);
 
@@ -36,7 +35,6 @@ const ListCard = ({title, limit = 0, api, link}) =>{
                         }
                     })
                     }
-
                 </div>
             </div>
         </section>

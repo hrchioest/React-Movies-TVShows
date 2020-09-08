@@ -1,7 +1,6 @@
 import React from "react";
 import "../sass/components/card.scss";
 
-
 const Card = (props) => {
 
   return (
@@ -9,7 +8,7 @@ const Card = (props) => {
       <div className='img-card'>
         <img src={'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + props.image} alt="poster"/>
       </div>
-      <h3 className='card-title'>{props.s}</h3>
+      <h3 className='card-title'>{props.title}</h3>
     </div>
   );
 };

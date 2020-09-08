@@ -2,6 +2,7 @@
 @import "../common/variables";
 
 #main-page {
+    align-items: flex-start;
     width: 100%;
     height: auto;
     background-color: $background;
@@ -13,7 +14,6 @@
     flex-wrap: wrap;
     flex-direction: row;
     flex-basis: 80%;
-    align-items: flex-start;
 }
 
 .list-main-page {

@@ -8,7 +8,7 @@ const StarScore = ({score}) => {
    
     const stars= [];
 
-    if (score % 2 != 0){
+    if (score % 2 !== 0){
         stars.push(<i class="fas fa-star-half-alt"></i>);
     } 
 

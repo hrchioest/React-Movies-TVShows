@@ -1,32 +1,51 @@
 import React from 'react';
-import img from '../images/laviejaguardia.jpg';
 import '../sass/components/movieInfo.scss';
 import StarScore from './StarScore';
 
-const MovieInfo = () =>{
+const MovieInfo = ({ title, poster, stars, overview, length, genres, budget, revenue, production, imdb }) =>{
+
+    let genresList;
+    if (genres) {
+        genresList = genres.map((g, i) => {
+            return (
+                <a href="#" key={i} className="bttn accion">{g.name}</a>
+            );
+        });
+    }
+
+    let productionList;
+    if (production) {
+        productionList = production.map((p, i) => {
+            return (
+                <span key={i}>{p.name}, </span>
+            );
+        });
+    }
 
     return(
         <div className="all">
             <div className="container-movie">
                 <div className="img-poster">
-                    <img alt="film" src={img}/>
+                    <img alt="film" src={'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + poster} />
                 </div>
                 <div className="container-text">
-                    <h2 className="title-movie">The Old Guard</h2>
+
+                    <h2 className="title-movie">{title}</h2>
                     <div className="rating-movie">
-                        <StarScore score={0}></StarScore>
+                        <StarScore score={stars}></StarScore>
                     </div>
-                    <p className="description-movie">Nunc felis leo, pulvinar vel diam ac, finibus bibendum eros. Suspendisse blandit leo vel fermentum ultrices. Proin sodales scelerisque nulla, et pulvinar turpis consequat nec.uspendisse blandit leo vel fermentum ultrices. Proin sodales scelerisque nulla, et pulvinar turpis consequat nec.</p>
-                    <p className="duration-movie mgn-top">Duración: 124min</p>
+
+                    <p className="description-movie">{overview}</p>
+                    <p className="duration-movie mgn-top">Duración: {length} min.</p>
                     <p className="gender-movie mgn-top">Géneros:
-                        <a href=" " className="bttn accion">Acción</a>
-                        <a href=" " className="bttn fantasia">Fantasía</a>
+                    {genresList}
                     </p>
-                    <p className="budget-movie mgn-top">Presupuesto: $70,000,000</p>
-                    <p className="collect-movie mgn-top">Recaudación: $0</p>
-                    <p className="produ-movie mgn-top">Producción: Skydance Media, Denver and Delilah Productions, Dune Films</p>
+                    <p className="budget-movie mgn-top">Presupuesto: ${budget}</p>
+                    <p className="collect-movie mgn-top">Recaudación: ${revenue}</p>
+                    <p className="produ-movie mgn-top">Producción: {productionList}</p>
+
                     <div className="links">
-                        <a href="https://www.imdb.com/title/tt7556122">
+                        <a href={`https://www.imdb.com/title/${imdb}`}>
                             <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="icon imdb">
                                 <path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM21.3 229.2H21c.1-.1.2-.3.3-.4zM97 319.8H64V192h33zm113.2 0h-28.7v-86.4l-11.6 86.4h-20.6l-12.2-84.5v84.5h-29V192h42.8c3.3 19.8 6 39.9 8.7 59.9l7.6-59.9h43zm11.4 0V192h24.6c17.6 0 44.7-1.6 49 20.9 1.7 7.6 1.4 16.3 1.4 24.4 0 88.5 11.1 82.6-75 82.5zm160.9-29.2c0 15.7-2.4 30.9-22.2 30.9-9 0-15.2-3-20.9-9.8l-1.9 8.1h-29.8V192h31.7v41.7c6-6.5 12-9.2 20.9-9.2 21.4 0 22.2 12.8 22.2 30.1zM265 229.9c0-9.7 1.6-16-10.3-16v83.7c12.2.3 10.3-8.7 10.3-18.4zm85.5 26.1c0-5.4 1.1-12.7-6.2-12.7-6 0-4.9 8.9-4.9 12.7 0 .6-1.1 39.6 1.1 44.7.8 1.6 2.2 2.4 3.8 2.4 7.8 0 6.2-9 6.2-14.4z">
                                 </path>

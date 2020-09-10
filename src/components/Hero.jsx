@@ -1,8 +1,12 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import "../sass/components/hero.scss";
+
 import poster from "../images/charlize.jpeg";
 
-const Hero = () => {
+
+const Hero = ({id}) => {
+
+ 
   return (
     <div className='hero-container'>
       <div className='black-gradient'></div>

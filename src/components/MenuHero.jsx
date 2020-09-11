@@ -55,9 +55,9 @@ const MenuHero = () =>{
                             production={information.production_companies}
                         />
                     )} />
-                    <Route path={`/:${id}/reparto`} render={(props) => (
+                    {/* <Route path={`/:${id}/reparto`} render={(props) => (
                         // <Cast id={information.id} />
-                    )}/>
+                    )}/> */}
                     <Route path="/videos" component={Video} />
                     <Route path="/similar" component={Similar} />
                 </Switch>

@@ -4,8 +4,8 @@ import MovieInfo from "./MovieInfo";
 import Video from "./Video";
 import Similar from "./Similar";
 import Hero from "./Hero";
+// import Cast from "./Cast";
 import axios from "axios";
-import Cast from "./Cast";
 import { NavLink } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useParams } from "react-router-dom";
@@ -56,7 +56,7 @@ const MenuHero = () =>{
                         />
                     )} />
                     <Route path={`/:${id}/reparto`} render={(props) => (
-                        <Cast id={information.id} />
+                        // <Cast id={information.id} />
                     )}/>
                     <Route path="/videos" component={Video} />
                     <Route path="/similar" component={Similar} />

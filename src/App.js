@@ -4,7 +4,11 @@ import Home from "./sections/Home";
 import Movie from "./sections/Movie";
 import Tv from "./sections/Tv";
 import ListAll from "./sections/ListAll";
+// import Hero from "./components/Hero";
+// import info from "./components/MovieInfo";
+import MenuHero from "./components/MenuHero";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -16,6 +20,7 @@ function App() {
           <Route exact path="/movie" component={Movie} />
           <Route exact path="/tv" component={Tv} />
           <Route exact path="/:seccion/trending" component={ListAll} />
+          <Route exact path="/:id/info" component={MenuHero} />
         </Switch>
       </div>
     </Router>

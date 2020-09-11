@@ -10,3 +10,6 @@ export const movieNow = "https://api.themoviedb.org/3/movie/now_playing?api_key=
 export const tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=b28a6d7a756aac4ded04e3b860e94284";
 export const tvTopRated = "https://api.themoviedb.org/3/tv/top_rated?api_key=b28a6d7a756aac4ded04e3b860e94284";
 export const tvNow = "https://api.themoviedb.org/3/tv/on_the_air?api_key=b28a6d7a756aac4ded04e3b860e94284";
+
+
+export const info = "https://api.themoviedb.org/3/movie/[id]?api_key=5dd9a436e42ee145f42a0361aceafad8&language=es";

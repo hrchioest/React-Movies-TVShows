@@ -1,11 +1,10 @@
 import React,{useState, useEffect} from "react";
 import "../sass/components/hero.scss";
 
-import poster from "../images/charlize.jpeg";
 
 
-const Hero = ({id}) => {
 
+const Hero = ({background}) => {
  
   return (
     <div className='hero-container'>
@@ -13,7 +12,7 @@ const Hero = ({id}) => {
       <div
         className='hero-movie'
         style={{
-          backgroundImage: `url(${poster})`
+          backgroundImage: `url(${'https://image.tmdb.org/t/p/original'+ background})`
         }}
       ></div>
     </div>

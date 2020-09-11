@@ -5,7 +5,8 @@ import Video from "./Video";
 import Similar from "./Similar";
 import Hero from "./Hero";
 import axios from "axios";
-import { NavLink } from 'react-router-dom';
+import Cast from "./Cast";
+import { NavLink } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import {info} from "../service/index";
@@ -18,18 +19,21 @@ const MenuHero = () =>{
     useEffect(() => {
       axios.get(info.replace("[id]",id))  
         .then(res => {
-          setInformation(res.data.results);
+          setInformation(res.data);
         }).catch(error => console.log(error))
        
     },[]);
-    console.log(id)
+   
     return(
         <>
-        <Hero id={id}/>
+        <Hero background={information.backdrop_path}/>
         <Router>
             <div className="menu-container">
-                <NavLink to="/info" exact activeClassName="selected" className="tab info">
+                <NavLink to={`/${id}/info`} exact activeClassName="selected" className="tab info">
                     INFO
+                </NavLink>
+                <NavLink to={`/${id}/reparto`} activeClassName="selected" className="tab vid">
+                    REPARTO
                 </NavLink>
                 <NavLink to="/videos" exact activeClassName="selected" className="tab vid">
                     VIDEOS
@@ -38,7 +42,22 @@ const MenuHero = () =>{
                     SIMILARES
                 </NavLink>
                 <Switch>
-                    <Route exact path="/info" component={MovieInfo} />
+                    <Route exact path={`/${id}/info`} render={() => (
+                        <MovieInfo id={information.id}
+                            title={information.title}
+                            poster={information.poster_path}
+                            stars={information.vote_average}
+                            overview={information.overview}
+                            length={information.runtime}
+                            genres={information.genres}
+                            budget={information.budget}
+                            revenue={information.revenue}
+                            production={information.production_companies}
+                        />
+                    )} />
+                    <Route path={`/:${id}/reparto`} render={(props) => (
+                        <Cast id={information.id} />
+                    )}/>
                     <Route path="/videos" component={Video} />
                     <Route path="/similar" component={Similar} />
                 </Switch>

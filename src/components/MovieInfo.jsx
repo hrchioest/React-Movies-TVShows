@@ -5,7 +5,7 @@ import StarScore from './StarScore';
 
 
 
-const MovieInfo = ({id, title, poster, stars, overview, length, genres, budget, revenue, production }) =>{
+const MovieInfo = ({information: {title, poster_path, vote_average, overview, runtime, genres, budget, revenue, production_companies }}) =>{
 
     let genresList;
     if (genres) {
@@ -17,8 +17,8 @@ const MovieInfo = ({id, title, poster, stars, overview, length, genres, budget, 
     }
 
     let productionList;
-    if (production) {
-        productionList = production.map((p, i) => {
+    if (production_companies) {
+        productionList = production_companies.map((p, i) => {
             return (
                 <span key={i}>{p.name}, </span>
             );
@@ -29,15 +29,16 @@ const MovieInfo = ({id, title, poster, stars, overview, length, genres, budget, 
         <div className="all">
             <div className="container-movie">
                 <div className="img-poster">
-                    <img alt="film" src={'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + poster}/>
+                    <img alt="film" src={'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + poster_path}/>
                 </div>
                 <div className="container-text">
                     <h2 className="title-movie">{title}</h2>
                     <div className="rating-movie">
-                        <StarScore score={stars}></StarScore>
+                        <StarScore score={vote_average}></StarScore>
                     </div>
                     <p className="description-movie">{overview}</p>
-                    <p className="duration-movie mgn-top">Duración: {length} min.</p>
+                    <p className="duration-movie mgn-top">
+                        Duración: {runtime} min.</p>
                     <p className="gender-movie mgn-top">Géneros:{genresList}</p>
                     <p className="budget-movie mgn-top">Presupuesto: ${Intl.NumberFormat().format(budget)}</p>
                     <p className="collect-movie mgn-top">Recaudación: ${revenue}</p>

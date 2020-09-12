@@ -29,7 +29,7 @@ const ContainerInfo = () =>{
         <Hero background={information.backdrop_path}/>
         <Router>
             <div className="menu-container">
-                <NavLink to={`/${id}/info`} exact activeClassName="selected" className="tab info">
+                <NavLink to={`/${type}/${id}/info`} exact activeClassName="selected" className="tab info">
                     INFO
                 </NavLink>
                 <NavLink to={`/${id}/reparto`} activeClassName="selected" className="tab vid">

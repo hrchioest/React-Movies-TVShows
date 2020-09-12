@@ -1,23 +1,23 @@
 import React,{useState, useEffect} from 'react';
-import "../sass/components/menuHero.scss";
+import "../sass/components/containerInfo.scss";
 import MovieInfo from "./MovieInfo";
 import Video from "./Video";
 import Similar from "./Similar";
 import Hero from "./Hero";
-// import Cast from "./Cast";
+import TvInfo from "./TvInfo";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import {info} from "../service/index";
 
-const MenuHero = () =>{
+const ContainerInfo = () =>{
 
-    const {id} = useParams();
+    const {id, type} = useParams();
 
     const [information, setInformation] = useState([]);
     useEffect(() => {
-      axios.get(info.replace("[id]",id))  
+      axios.get(info.replace("[id]",id).replace("[type]", type))  
         .then(res => {
           setInformation(res.data);
         }).catch(error => console.log(error))
@@ -42,18 +42,9 @@ const MenuHero = () =>{
                     SIMILARES
                 </NavLink>
                 <Switch>
-                    <Route exact path={`/${id}/info`} render={() => (
-                        <MovieInfo id={information.id}
-                            title={information.title}
-                            poster={information.poster_path}
-                            stars={information.vote_average}
-                            overview={information.overview}
-                            length={information.runtime}
-                            genres={information.genres}
-                            budget={information.budget}
-                            revenue={information.revenue}
-                            production={information.production_companies}
-                        />
+                    <Route exact path={`/${type}/${id}/info`} render={() => (
+                       type === 'movie' ? <MovieInfo information={information} />:<TvInfo information={information} />
+                        
                     )} />
                     {/* <Route path={`/:${id}/reparto`} render={(props) => (
                         // <Cast id={information.id} />
@@ -67,4 +58,4 @@ const MenuHero = () =>{
     )
 }
 
-export default MenuHero;
+export default ContainerInfo;

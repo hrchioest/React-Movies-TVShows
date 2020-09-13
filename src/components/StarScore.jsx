@@ -9,13 +9,13 @@ const StarScore = ({score}) => {
     const stars= [];
 
     for(let i=1; i<=cantStarInt; i++ ){
-        stars.push(<i class="fas fa-star"></i>)
+        stars.push(<i key={i} className="fas fa-star"></i>)
     }
     if (score % 2 != 0){
-        stars.push(<i class="fas fa-star-half-alt"></i>);
+        stars.push(<i key="half" className="fas fa-star-half-alt"></i>);
     } 
     for(let i=1; i<=cantStarEmpty; i++){
-        stars.push(<i class="far fa-star"></i>)
+        stars.push(<i key={`${i}empty`} className="far fa-star"></i>)
     }
    
     

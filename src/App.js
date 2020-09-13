@@ -19,6 +19,7 @@ function App() {
           <Route exact path="/tv" component={Tv} />
           <Route exact path="/:seccion/trending" component={ListAll} />
           <Route exact path="/:type/:id/info" component={ContainerInfo} />
+          <Route exact path="/:type/:id/reparto" component={ContainerInfo} />
         </Switch>
       </div>
     </Router>

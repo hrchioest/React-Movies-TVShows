@@ -13,3 +13,4 @@ export const tvNow = "https://api.themoviedb.org/3/tv/on_the_air?api_key=b28a6d7
 
 
 export const info = "https://api.themoviedb.org/3/[type]/[id]?api_key=5dd9a436e42ee145f42a0361aceafad8&language=es";
+export const cast = "https://api.themoviedb.org/3/[type]/[id]/credits?api_key=5dd9a436e42ee145f42a0361aceafad8&language=es"

@@ -38,7 +38,15 @@
     transition: all 0.9s ease 0s, height 0s ease 0s;
   }
 }
+img.img-user{
+  height: 382px;
+}
 
+.card-subtitle{
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0px;
+}
 
 #card:hover {
   .img-card {

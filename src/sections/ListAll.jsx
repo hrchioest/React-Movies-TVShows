@@ -13,7 +13,7 @@ const sections = {
     tv: {
         api:trendingTv,
         title: "Series que son tendencia",
-        tv:"tv"
+        type:"tv"
     },
     moviePopular:{
         api:moviePopular,
@@ -38,17 +38,17 @@ const sections = {
     tvPopular:{
         api:tvPopular,
         title:"Series populares",
-        tv:"tv"
+        type:"tv"
     },
     tvTopRated:{
         api:tvTopRated,
         title:"Series con más críticas",
-        tv:"tv"
+        type:"tv"
     },
     tvNow:{
         api:tvNow,
         title:"Series al aire",
-        tv:"tv"
+        type:"tv"
     }
 }
 

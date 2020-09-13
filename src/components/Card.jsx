@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 
 
-const Card = ({title, id, image, type}) => {
+const Card = ({id, title, image, type}) => {
 
   
   return (

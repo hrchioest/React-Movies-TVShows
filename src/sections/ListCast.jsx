@@ -23,7 +23,6 @@ const ListCast = ({id, type}) =>{
                     {castInfo.map((castInfo, i) => {
                     console.log(castInfo.profile_path)
                         return (
-                      
                             <Cast key={i} id={castInfo.id} image={castInfo.profile_path } name={castInfo.name} character={castInfo.character}/>
                         )
                     })

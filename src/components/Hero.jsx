@@ -21,4 +21,4 @@ const Hero = ({background}) => {
 
 export default Hero;
 
-//MODIFICAR <a>
+

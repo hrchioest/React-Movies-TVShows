@@ -9,6 +9,7 @@
 }
 
 .container-movie {
+  background-color:inherit;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -87,26 +88,4 @@
   }
 }
 
-.links {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 50px;
-  width: 100%;
-  a {
-    text-decoration: none;
-    cursor: pointer;
-    .icon {
-      color: rgb(220, 221, 222);
-      margin-right: 10px;
-      transition: all 0.6s ease 0;
-      width: 25px;
-      &:hover {
-        color: rgb(33, 150, 243);
-        transform: scale(1.1);
-      }
-    }
-  }
-}
+

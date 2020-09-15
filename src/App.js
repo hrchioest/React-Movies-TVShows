@@ -4,7 +4,7 @@ import Home from "./sections/Home";
 import Movie from "./sections/Movie";
 import Tv from "./sections/Tv";
 import ListAll from "./sections/ListAll";
-import Movies from "./sections/Movies";
+import ContainerInfo from "./components/ContainerInfo";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
@@ -18,7 +18,8 @@ function App() {
           <Route exact path="/movie" component={Movie} />
           <Route exact path="/tv" component={Tv} />
           <Route exact path="/:seccion/trending" component={ListAll} />
-          <Route exact path="/:id/info" component={Movies} />
+          <Route exact path="/:type/:id/info" component={ContainerInfo} />
+          <Route exact path="/:type/:id/reparto" component={ContainerInfo} />
         </Switch>
       </div>
     </Router>

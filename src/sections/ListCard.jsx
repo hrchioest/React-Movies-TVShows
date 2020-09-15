@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const ListCard = ({ title, limit = 0, api, link }) => {
+const ListCard = ({ title, limit = 0, api, link, type }) => {
     const [list, setList] = useState([]);
 
     useEffect(() => {
@@ -32,11 +32,7 @@ const ListCard = ({ title, limit = 0, api, link }) => {
                     {list.map((movie, i) => {
                         if (i < limit || limit === 0) {
                             return (
-                                <Card key={i}
-                                    id={movie.id}
-                                    image={movie.poster_path}
-                                    title={movie.title || movie.name}
-                                />
+                                <Card key={i} id={movie.id} type={type} image={movie.poster_path} title={movie.title || movie.name} />
                             )
                         }
                     })

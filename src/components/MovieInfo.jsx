@@ -48,7 +48,8 @@ const MovieInfo = ({information: {title, poster_path, vote_average, overview, ru
             </div>
         </div>
     )
+
 }
 
-export default MovieInfo; 
+export default MovieInfo;
 

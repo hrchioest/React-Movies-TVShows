@@ -5,7 +5,7 @@ import StarScore from './StarScore';
 
 
 
-const MovieInfo = ({information: {title, poster_path, vote_average, overview, runtime, genres, budget, revenue, production_companies }}) =>{
+const MovieInfo = ({information: {id, title, poster_path, vote_average, overview, runtime, genres, budget, revenue, production_companies }}) =>{
 
     let genresList;
     if (genres) {
@@ -32,7 +32,7 @@ const MovieInfo = ({information: {title, poster_path, vote_average, overview, ru
                     <img alt="film" src={'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + poster_path}/>
                 </div>
                 <div className="container-text">
-                    <h2 className="title-movie">{title}</h2>
+                    <h2 className="title-movie">{title}- {id}</h2>
                     <div className="rating-movie">
                         <StarScore score={vote_average}></StarScore>
                     </div>
@@ -43,7 +43,7 @@ const MovieInfo = ({information: {title, poster_path, vote_average, overview, ru
                     <p className="budget-movie mgn-top">Presupuesto: ${Intl.NumberFormat().format(budget)}</p>
                     <p className="collect-movie mgn-top">Recaudación: ${revenue}</p>
                     <p className="produ-movie mgn-top">Producción: {productionList}</p>
-                    <RedSocial />
+                    <RedSocial id={id}/>
                 </div>
             </div>
         </div>

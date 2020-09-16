@@ -11,7 +11,7 @@ const StarScore = ({score}) => {
     for(let i=1; i<=cantStarInt; i++ ){
         stars.push(<i key={i} className="fas fa-star"></i>)
     }
-    if (score % 2 != 0){
+    if (score % 2 !== 0){
         stars.push(<i key="half" className="fas fa-star-half-alt"></i>);
     } 
     for(let i=1; i<=cantStarEmpty; i++){

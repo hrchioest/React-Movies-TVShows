@@ -35,7 +35,6 @@ const MovieInfo = ({
     });
   }
 
-  console.log("viendo mvie info", id);
   return (
     <div className='all'>
       <div className='container-movie'>
@@ -60,7 +59,7 @@ const MovieInfo = ({
           </p>
           <p className='collect-movie mgn-top'>Recaudación: ${revenue}</p>
           <p className='produ-movie mgn-top'>Producción: {productionList}</p>
-          {id ? <RedSocial id={id} /> : null}
+          {id ? <RedSocial id={id} type='movie' /> : null}
         </div>
       </div>
     </div>

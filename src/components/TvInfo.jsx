@@ -60,7 +60,7 @@ const TvInfo = ({
           </p>
           <p className='gender-movie mgn-top'>Géneros:{genresList}</p>
           <p className='produ-movie mgn-top'>Producción: {productionList}</p>
-          (id ? <RedSocial id={id} /> :null)
+          {id ? <RedSocial id={id} type='tv' /> : null}
         </div>
       </div>
     </div>

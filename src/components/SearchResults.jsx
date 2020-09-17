@@ -1,7 +1,6 @@
 import React from 'react';
 import "../sass/components/search.scss";
 import Card from "./Card";
-import Pagination from './Pagination';
 
 const SearchResults = ({ results }) =>{
 
@@ -16,7 +15,6 @@ const SearchResults = ({ results }) =>{
                         </div>
                     ))}
                 </div>
-                <Pagination />
             </div>
         </section>
     );

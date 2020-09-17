@@ -1,16 +1,18 @@
+const api_key = process.env.REACT_APP_API_KEY_THEMOVIEDB;
 
-export const movieTrending = "https://api.themoviedb.org/3/trending/movie/week?api_key=b28a6d7a756aac4ded04e3b860e94284";
-export const trendingTv = "https://api.themoviedb.org/3/trending/tv/week?api_key=b28a6d7a756aac4ded04e3b860e94284";
+export const movieTrending = `https://api.themoviedb.org/3/trending/movie/week?api_key=${api_key}`;
+export const trendingTv = `https://api.themoviedb.org/3/trending/tv/week?api_key=${api_key}`;
 
-export const moviePopular = "https://api.themoviedb.org/3/movie/popular?api_key=b28a6d7a756aac4ded04e3b860e94284";
-export const movieTopRated = "https://api.themoviedb.org/3/movie/top_rated?api_key=b28a6d7a756aac4ded04e3b860e94284";
-export const movieUpcoming = "https://api.themoviedb.org/3/movie/upcoming?api_key=b28a6d7a756aac4ded04e3b860e94284";
-export const movieNow = "https://api.themoviedb.org/3/movie/now_playing?api_key=b28a6d7a756aac4ded04e3b860e94284";
+export const moviePopular = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key} `;
+export const movieTopRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key} `;
+export const movieUpcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key} `;
+export const movieNow = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}`;
 
-export const tvPopular = "https://api.themoviedb.org/3/tv/popular?api_key=b28a6d7a756aac4ded04e3b860e94284";
-export const tvTopRated = "https://api.themoviedb.org/3/tv/top_rated?api_key=b28a6d7a756aac4ded04e3b860e94284";
-export const tvNow = "https://api.themoviedb.org/3/tv/on_the_air?api_key=b28a6d7a756aac4ded04e3b860e94284";
+export const tvPopular = `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}`;
+export const tvTopRated = `https://api.themoviedb.org/3/tv/top_rated?api_key=${api_key}`;
+export const tvNow = `https://api.themoviedb.org/3/tv/on_the_air?api_key=${api_key}`;
 
-export const multiSearch = "https://api.themoviedb.org/3/search/multi?api_key=f1116d96306803726f99db84a5974c4b";
+export const info = `https://api.themoviedb.org/3/[type]/[id]?api_key=${api_key}&language=es`;
+export const cast = `https://api.themoviedb.org/3/[type]/[id]/credits?api_key=${api_key}&language=es`;
 
-export const info = "https://api.themoviedb.org/3/[type]/[id]?api_key=5dd9a436e42ee145f42a0361aceafad8&language=es";
+export const multiSearch = `https://api.themoviedb.org/3/search/multi?api_key=${api_key}`;

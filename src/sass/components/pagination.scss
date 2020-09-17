@@ -1,6 +1,6 @@
 @import "../common/variables.scss";
 
-#pagination{
+.pagination{
     display: flex;
     align-self: center;
     list-style: none;
@@ -11,6 +11,7 @@
 }
 
 .list-numbers{
+    list-style: none;
     width: 40px;
     height: 40px;
     display: flex;

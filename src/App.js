@@ -10,6 +10,7 @@ import Tv from "./sections/Tv";
 import ListAll from "./sections/ListAll";
 import ContainerInfo from "./components/ContainerInfo";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Pagination from "./components/Pagination";
 
 
 function App() {
@@ -41,11 +42,9 @@ const handleInput = (e)=>{
     });
 }
 
-  /**const nextPage = (pageNumb) =>{
+const nextPage = (pageNumb) =>{
     axios(multiSearch + '&query=' + state.searchTerm + '&page=' + pageNumb).then(({data})=>{    
       let results = data.results;
-
-      console.log(data)
 
       setState(prevState =>{
         return{...prevState, results : results, currentPage : pageNumb}
@@ -53,20 +52,21 @@ const handleInput = (e)=>{
     });
   }
   
-  const numberPages = Math.floor(state.totalPages / 20)
-  */
+const numberPages = Math.floor(state.totalPages / 20)
  
   return (
     <Router>
       <div className='App'>
         <Header handleInput={handleInput} search={search} />
         <SearchResults results={state.results} />
+        {state.totalPages > 20 ? <Pagination pages={numberPages} nextPage={nextPage} currentPage={state.currentPage}/> : ""}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/movie" component={Movie} />
           <Route exact path="/tv" component={Tv} />
           <Route exact path="/:seccion/trending" component={ListAll} />
           <Route exact path="/:type/:id/info" component={ContainerInfo} />
+          <Route exact path="/:type/:id/reparto" component={ContainerInfo} />
         </Switch>
       </div>
     </Router>
@@ -74,6 +74,3 @@ const handleInput = (e)=>{
 }
 
 export default App;
-
-
-//{ state.totalPages > 20 ? <Pagination pages={numberPages} nextPage={nextPage} currentPage={state.currentPage}/> : ''}

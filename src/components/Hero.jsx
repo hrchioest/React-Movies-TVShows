@@ -16,3 +16,5 @@ const Hero = ({background}) => {
 };
 
 export default Hero;
+
+

@@ -17,8 +17,6 @@ const RedSocial = ({ id }) => {
       .catch((error) => console.log(error + " pelotuda te salio mal"));
   }, [id]);
 
-  console.log({ socialMedia });
-
   return (
     <div className='links'>
       <a href={`https://www.imdb.com/title/${socialMedia.imdb_id}`}>

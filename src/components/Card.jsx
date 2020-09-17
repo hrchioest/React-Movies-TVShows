@@ -1,14 +1,15 @@
 import React from "react";
 import "../sass/components/card.scss";
+import {Link} from "react-router-dom";
+import notFound from "../images/notFound.jpeg";
 
-const Card = (props) => {
-
+const Card = ({title, id, image, type}) => {
   return (
     <div id='card'>
       <div className='img-card'>
-        <img src={'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + props.image} alt="poster"/>
+        <Link to ={`/${type}/${id}/info`}><img src={image ? 'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + image : notFound} alt={`Poster of "${title}"`}/></Link>
       </div>
-      <h3 className='card-title'>{props.title}</h3>
+      <h3 className='card-title'>{title}</h3>
     </div>
   );
 };

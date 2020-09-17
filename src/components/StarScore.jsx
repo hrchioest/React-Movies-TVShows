@@ -8,18 +8,16 @@ const StarScore = ({score}) => {
    
     const stars= [];
 
-    if (score % 2 !== 0){
-        stars.push(<i class="fas fa-star-half-alt"></i>);
-    } 
-
     for(let i=1; i<=cantStarInt; i++ ){
         stars.push(<i class="fas fa-star"></i>)
     }
-
+    if (score % 2 != 0){
+        stars.push(<i class="fas fa-star-half-alt"></i>);
+    } 
     for(let i=1; i<=cantStarEmpty; i++){
         stars.push(<i class="far fa-star"></i>)
     }
-    
+   
     return(
         <>
             <span>{stars.map(star =>star)}</span>  

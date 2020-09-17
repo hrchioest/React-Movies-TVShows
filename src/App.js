@@ -1,42 +1,61 @@
 import React, {useState} from "react";
 import axios from 'axios';
+import { multiSearch } from "./service/index";
+
 import Header from "./sections/Header";
+import SearchResults from "./components/SearchResults";
 import Home from "./sections/Home";
 import Movie from "./sections/Movie";
 import Tv from "./sections/Tv";
 import ListAll from "./sections/ListAll";
-import { multiSearch } from "./service/index";
+import ContainerInfo from "./components/ContainerInfo";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import SearchResults from "./components/SearchResults";
-import Movies from "./sections/Movies";
+
 
 function App() {
 
   const [state,setState] = useState({
-    s:"",
-    results: []
-  });
+    searchTerm:"",
+    results: [],
+    totalPages: 0,
+    currentPage: 1,
+});
 
-  const search = (e) =>{ 
+const search = (e) =>{ 
     if(e.key  === "Enter"){
-      axios(multiSearch + '&query=' + state.s).then(({data})=>{    
+      axios(multiSearch + '&query=' + state.searchTerm).then(({data})=>{    
         let results = data.results;
 
         setState(prevState =>{
-          return{...prevState, results : results}
+          return{...prevState, results : results, totalPages: data.total_results}
         })
       });
     }
-  }
+}
 
-  const handleInput = (e)=>{
-    let s = e.target.value
+const handleInput = (e)=>{
+    let searchTerm = e.target.value
 
     setState(prevState =>{
-      return{...prevState, s: s }
+      return{...prevState, searchTerm: searchTerm }
+    });
+}
+
+  /**const nextPage = (pageNumb) =>{
+    axios(multiSearch + '&query=' + state.searchTerm + '&page=' + pageNumb).then(({data})=>{    
+      let results = data.results;
+
+      console.log(data)
+
+      setState(prevState =>{
+        return{...prevState, results : results, currentPage : pageNumb}
+      })
     });
   }
-
+  
+  const numberPages = Math.floor(state.totalPages / 20)
+  */
+ 
   return (
     <Router>
       <div className='App'>
@@ -47,11 +66,14 @@ function App() {
           <Route exact path="/movie" component={Movie} />
           <Route exact path="/tv" component={Tv} />
           <Route exact path="/:seccion/trending" component={ListAll} />
+          <Route exact path="/:type/:id/info" component={ContainerInfo} />
         </Switch>
-        <Movies/>
       </div>
     </Router>
   );
 }
 
 export default App;
+
+
+//{ state.totalPages > 20 ? <Pagination pages={numberPages} nextPage={nextPage} currentPage={state.currentPage}/> : ''}

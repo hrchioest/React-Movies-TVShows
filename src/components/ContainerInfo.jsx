@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../sass/components/containerInfo.scss";
 import MovieInfo from "./MovieInfo";
-// import Videos from "../sections/Videos";
-import Video from "./Video";
+import Videos from "../sections/Videos";
 import Similar from "./Similar";
 import Hero from "./Hero";
 import TvInfo from "./TvInfo";
@@ -97,7 +96,7 @@ const ContainerInfo = () => {
           <Route
             exact
             path={`/movie/${id}/videos`}
-            render={() => <Video id={id} />}
+            render={() => <Videos id={id} />}
           />
 
           <Route path='/similar' component={Similar} />

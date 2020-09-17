@@ -16,3 +16,4 @@ export const info = `https://api.themoviedb.org/3/[type]/[id]?api_key=${api_key}
 export const cast = `https://api.themoviedb.org/3/[type]/[id]/credits?api_key=${api_key}&language=es`;
 export const external = `https://api.themoviedb.org/3/[type]/[id]/external_ids?api_key=${api_key}&language=es`;
 export const videoMovie = `https://api.themoviedb.org/3/movie/[id]/videos?api_key=${api_key}&language=en=US`;
+

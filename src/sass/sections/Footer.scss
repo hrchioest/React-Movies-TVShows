@@ -1,12 +1,66 @@
 @import "../common/mixin.scss";
 @import "../common/variables.scss";
 
+
 .container-footer {
+  background-color: $menu;
   box-sizing: border-box;
   color: #80868b;
+  padding: 10px 0 10px 0;
+}
+
+.names-box {
+  text-align: center;
+  h3 {
+    color: $text;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    li {
+      list-style: none;
+      a {
+        color: #80868b;
+        font-size: 25px;
+        margin: 10px;
+        &:hover {
+          color:white;
+        }
+      }
+    }
+  }
+}
+
+.rights-box {
+  font-size: 12px;
+  color: #80868b;
+  text-align: center;
+  a {
+    color: #80868b;
+    margin-left: 10px;
+    &:hover {
+      color:white;
+    }
+  }
+}
+
+
+
+
+
+
+
+/*
+.container-footer {
+  box-sizing: border-box;
+  color: $text;
   margin: 0;
   padding: 2rem 1.5rem 3.5rem;
   line-height: 1.6;
+  h3 {
+    font-size: 16px;
+  }
   p {
     margin: 0.3rem 0;
     font-size: 14px;
@@ -19,3 +73,9 @@
     }
   }
 }
+
+.footer-names {
+  display: flex;
+  justify-content: space-around;
+}
+*/

@@ -6,6 +6,7 @@ import Tv from "./sections/Tv";
 import ListAll from "./sections/ListAll";
 import ContainerInfo from "./components/ContainerInfo";
 import Footer from "./sections/Footer";
+import Similar from "./components/Similar";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/:seccion/trending" component={ListAll} />
           <Route exact path="/:type/:id/info" component={ContainerInfo} />
           <Route exact path="/:type/:id/reparto" component={ContainerInfo} />
+          <Route exact path="/:type/:id/similares" component={Similar} />
         </Switch>
       </div>
       <Footer />

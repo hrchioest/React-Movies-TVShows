@@ -7,7 +7,6 @@ import {Link} from "react-router-dom";
 
 const Card = ({id, title, image, type}) => {
 
-  
   return (
     <div id='card'>
       <div className='img-card'>

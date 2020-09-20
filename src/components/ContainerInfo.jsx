@@ -42,7 +42,7 @@ const ContainerInfo = () =>{
             <NavLink to={`/${type}/${id}/videos`} exact activeClassName="selected" className="tab vid">
                 VIDEOS
             </NavLink>
-            <NavLink to={`/${type}/${id}/similar`} exact activeClassName="selected" className="tab similar">
+            <NavLink to={`/${type}/${id}/similares`} exact activeClassName="selected" className="tab similar">
                 SIMILARES
             </NavLink>
 
@@ -76,7 +76,7 @@ const ContainerInfo = () =>{
                 <NavLink to={`/${type}/${id}/reparto`} activeClassName="selected" className="tab vid">
                     REPARTO
                 </NavLink>
-                <NavLink to={`/${type}/${id}/similar`} exact activeClassName="selected" className="tab similar">
+                <NavLink to={`/${type}/${id}/similares`} exact activeClassName="selected" className="tab similar">
                     SIMILARES
                 </NavLink>
 

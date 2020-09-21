@@ -3,16 +3,13 @@
 
 .youtube {
   @media (min-width: 1025px) {
-    height: 211px;
-    width: 375px;
+    height: 300px;
   }
   @media (max-width: 1024px) {
-    height: 188px;
-    width: 334px;
+    height: 238px;
   }
   @media (max-width: 767px) {
     height: 194px;
-    width: 345px;
   }
 }
 
@@ -20,6 +17,9 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+.content-titles {
+  max-width: 375px;
 }
 
 .title,

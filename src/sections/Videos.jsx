@@ -19,8 +19,14 @@ const Videos = ({ id }) => {
     <div className='container-videos'>
       {trailer
         ? trailer.map((movie, i) => {
-            console.log(movie);
-            return <Video name={movie.name} id={movie.key} type={movie.type} />;
+            return (
+              <Video
+                name={movie.name}
+                key={i}
+                id={movie.key}
+                type={movie.type}
+              />
+            );
           })
         : null}
     </div>

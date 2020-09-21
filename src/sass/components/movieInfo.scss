@@ -1,4 +1,3 @@
-
 @import "../common/mixin.scss";
 @import "../common/variables.scss";
 .all {
@@ -9,7 +8,7 @@
 }
 
 .container-movie {
-  background-color:inherit;
+  background-color: inherit;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -55,6 +54,7 @@
       color: rgb(220, 221, 222);
       font-size: 32px;
       font-weight: 300;
+      line-height: initial;
       margin-top: 0;
     }
     .rating-movie {
@@ -64,7 +64,8 @@
       flex-wrap: wrap;
       justify-content: flex-start;
       width: 100%;
-      .fa-star, .fa-star-half-alt {
+      .fa-star,
+      .fa-star-half-alt {
         color: rgb(33, 150, 243);
         height: 20px;
         margin-right: 3px;
@@ -87,5 +88,3 @@
     color: #161cf9;
   }
 }
-
-

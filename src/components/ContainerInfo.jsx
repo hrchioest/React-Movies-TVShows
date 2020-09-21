@@ -6,13 +6,20 @@ import Similar from "./Similar";
 import Hero from "./Hero";
 import TvInfo from "./TvInfo";
 import ListCast from "../sections/ListCast";
+import Episodios from "../sections/Episodios";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 import { info } from "../service/index";
 
 const ContainerInfo = () => {
+  const { path } = useRouteMatch();
   const { id, type } = useParams();
 
   const [information, setInformation] = useState([]);
@@ -56,12 +63,12 @@ const ContainerInfo = () => {
             </NavLink>
           ) : (
             <NavLink
-              to={`/tv/${id}/temporadas`}
+              to={`/tv/${id}/seasons/1`}
               exact
               activeClassName='selected'
               className='tab vid'
             >
-              TEMPORADAS
+              EPISODIOS
             </NavLink>
           )}
 
@@ -78,7 +85,7 @@ const ContainerInfo = () => {
         <Switch>
           <Route
             exact
-            path={`/${type}/${id}/info`}
+            path={`${path}/info`}
             render={() =>
               type === "movie" ? (
                 <MovieInfo information={information} />
@@ -89,7 +96,7 @@ const ContainerInfo = () => {
           />
           <Route
             exact
-            path={`/${type}/${id}/reparto`}
+            path={`${path}/reparto`}
             render={() => <ListCast id={id} type={type} />}
           />
 
@@ -97,6 +104,14 @@ const ContainerInfo = () => {
             exact
             path={`/movie/${id}/videos`}
             render={() => <Videos id={id} />}
+          />
+
+          <Route
+            exact
+            path={`${path}/seasons/:temporada`}
+            render={() => (
+              <Episodios id={id} cantTemp={information.number_of_seasons} />
+            )}
           />
 
           <Route path='/similar' component={Similar} />

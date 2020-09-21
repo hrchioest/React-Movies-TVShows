@@ -16,8 +16,6 @@ const Similar = ({ id, type, limit = 0 }) => {
             .catch((error) => console.log(error));
     }, [id]);
 
-    useEffect(() => console.log({ similares }), [similares]
-    );
 
     return (
 

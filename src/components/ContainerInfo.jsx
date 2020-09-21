@@ -30,22 +30,24 @@ const ContainerInfo = () =>{
         <Hero background={information.backdrop_path}/>
 
         <Router>
-
+            
             {(type === 'movie')?
-            <div className="menu-container">
-            <NavLink to={`/${type}/${id}/info`} exact activeClassName="selected" className="tab info">
-                INFO
-            </NavLink>
-            <NavLink to={`/${type}/${id}/reparto`} activeClassName="selected" className="tab vid">
-                REPARTO
-            </NavLink>
-            <NavLink to={`/${type}/${id}/videos`} exact activeClassName="selected" className="tab vid">
-                VIDEOS
-            </NavLink>
-            <NavLink to={`/${type}/${id}/similares`} exact activeClassName="selected" className="tab similar">
-                SIMILARES
-            </NavLink>
-
+            <div className="info-container">
+                
+                <div className="menu-info-details">
+                    <NavLink to={`/${type}/${id}/info`} exact activeClassName="selected" className="tab info">
+                        INFO
+                    </NavLink>
+                    <NavLink to={`/${type}/${id}/reparto`} activeClassName="selected" className="tab vid">
+                        REPARTO
+                    </NavLink>
+                    <NavLink to={`/${type}/${id}/videos`} exact activeClassName="selected" className="tab vid">
+                        VIDEOS
+                    </NavLink>
+                    <NavLink to={`/${type}/${id}/similares`} exact activeClassName="selected" className="tab similar">
+                        SIMILARES
+                    </NavLink>
+                </div>
             
             <Switch>
 
@@ -65,8 +67,9 @@ const ContainerInfo = () =>{
 
             </Switch>
 
-        </div> : <div className="menu-container">
-
+        </div> : <div className="info-container">
+           
+            <div className="menu-info-details">
                 <NavLink to={`/${type}/${id}/info`} exact activeClassName="selected" className="tab info">
                     INFO
                 </NavLink>
@@ -79,6 +82,7 @@ const ContainerInfo = () =>{
                 <NavLink to={`/${type}/${id}/similares`} exact activeClassName="selected" className="tab similar">
                     SIMILARES
                 </NavLink>
+            </div>
 
                 <Switch>
 

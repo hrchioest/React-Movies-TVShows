@@ -1,37 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React from 'react';
 import Video from "../components/Video";
 import {videos} from "../service/index";
-import axios from "axios";
-import { videoMovie } from "../service/index";
 import "../sass/sections/videos.scss";
 import { useEffect } from 'react';
 
-const Videos = ({ id }) => {
-  const [trailer, setTrailer] = useState([]);
+const Videos = () => {
+
+  const [videosY, setVideosY] = useState([]);
   useEffect(() => {
-    axios
-      .get(videoMovie.replace("[id]", id))
-      .then((res) => {
-        setTrailer(res.data.results);
-      })
-      .catch((error) => console.log(error));
+      axios.get(videosY.replace("[id]", id).replace("[type]", type))
+          .then((res) => {
+              setVideosY(res.data.results);
+          })
+          .catch((error) => console.log(error));
   }, [id]);
 
 
   return (
     <div className='container-videos'>
-      {trailer
-        ? trailer.map((movie, i) => {
-            return (
-              <Video
-                name={movie.name}
-                key={i}
-                id={movie.key}
-                type={movie.type}
-              />
-            );
-          })
-        : null}
+      <Video />
+      <Video />
+      <Video />
+      <Video />
     </div>
   );
 };

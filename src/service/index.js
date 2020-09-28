@@ -15,5 +15,9 @@ export const tvNow = `https://api.themoviedb.org/3/tv/on_the_air?api_key=${api_k
 export const info = `https://api.themoviedb.org/3/[type]/[id]?api_key=${api_key}&language=es`;
 export const cast = `https://api.themoviedb.org/3/[type]/[id]/credits?api_key=${api_key}&language=es`;
 export const external = `https://api.themoviedb.org/3/[type]/[id]/external_ids?api_key=${api_key}&language=es`;
+
 export const similars = `https://api.themoviedb.org/3/[type]/[id]/similar?api_key=${api_key}&language=es`;
 export const videos = `https://api.themoviedb.org/3/[type]/[id]/similar?api_key=${api_key}&language=es`;
+
+export const videoMovie = `https://api.themoviedb.org/3/movie/[id]/videos?api_key=${api_key}&language=en=US`;
+export const season = `https://api.themoviedb.org/3/tv/[id]/season/[season_number]?api_key=${api_key}&language=es`;

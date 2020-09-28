@@ -5,6 +5,7 @@ import ListCard from "../sections/ListCard";
 import "../sass/components/similars.scss";
 import { similars } from "../service/index";
 
+
 const Similar = ({ id, type, limit = 0 }) => {
   const [similares, setSimilares] = useState([]);
   useEffect(() => {

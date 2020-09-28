@@ -6,6 +6,12 @@ import Hero from "./Hero";
 import TvInfo from "./TvInfo";
 import ListCast from "../sections/ListCast";
 import Similar from "../components/Similar";
+import Videos from "../sections/Videos";
+import Similar from "./Similar";
+import Hero from "./Hero";
+import TvInfo from "./TvInfo";
+import ListCast from "../sections/ListCast";
+import Episodios from "../sections/Episodios";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import {
@@ -19,6 +25,14 @@ import { info } from "../service/index";
 
 const ContainerInfo = () => {
   const { path, url } = useRouteMatch();
+
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
+import { info } from "../service/index";
+
+const ContainerInfo = () => {
+  const { path } = useRouteMatch();
   const { id, type } = useParams();
 
   const [information, setInformation] = useState([]);
@@ -34,7 +48,6 @@ const ContainerInfo = () => {
   return (
     <>
       <Hero background={information.backdrop_path} />
-
       <Router>
         <div className='info-container'>
           <div className='menu-info-details'>

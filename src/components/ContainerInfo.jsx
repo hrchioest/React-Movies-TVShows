@@ -6,7 +6,7 @@ import Similar from "./Similar";
 import Hero from "./Hero";
 import TvInfo from "./TvInfo";
 import ListCast from "../sections/ListCast";
-import Episodios from "../sections/Episodios";
+// import Episodios from "../sections/Episodios";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import {
@@ -107,17 +107,17 @@ const ContainerInfo = () => {
             render={() => <Videos id={id} />}
           />
 
-          <Route
+          {/* <Route
             exact
             path={`${path}/seasons/:temporada`}
             render={() => (
               <Episodios id={id} cantTemp={information.number_of_seasons} />
             )}
-          />
+          /> */}
 
           <Route path={`${path}/similares`}>
-              <Similar id={id} type={type} />
-           </Route>
+            <Similar id={id} type={type} />
+          </Route>
         </Switch>
       </Router>
     </>

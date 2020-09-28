@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import Card from "./Card";
+import axios from "axios";
+import { similars } from "../service/index";
 
 const Similar = ({ id, type, limit = 0 }) => {
   const [similares, setSimilares] = useState([]);
@@ -31,4 +34,3 @@ const Similar = ({ id, type, limit = 0 }) => {
 };
 
 export default Similar;
-

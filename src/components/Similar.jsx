@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
 import { similars } from "../service/index";
+import "../sass/components/similar.scss";
 
 const Similar = ({ id, type, limit = 0 }) => {
   const [similares, setSimilares] = useState([]);

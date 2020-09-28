@@ -73,7 +73,8 @@ const ContainerInfo = () => {
           )}
 
           <NavLink
-            to={`/${type}/${id}/similar`}
+            to={`/${type}/${id}/similares`}
+            exact
             activeClassName='selected'
             className='tab similar'
           >

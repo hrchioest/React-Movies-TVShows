@@ -43,8 +43,7 @@
 
 .searcher-nav {
   position: relative;
-  padding-left: 20px;
-  padding-top: 10px;
+
   input {
     background: transparent;
     width: 200px;
@@ -54,18 +53,32 @@
     font-weight: 300;
     color: $text;
     border-width: 0px;
-    padding-left: 20px;
+    padding: 11px 19px 9px 46px;
     outline: none;
-    input:active {
+    cursor: pointer;
+    &:focus {
       border: 1px solid $text;
+      border-radius: 4px;
     }
   }
+
   @include phone {
     background-color: $menu;
     top: 0;
-    input {
-      padding-left: 10px;
-    }
+  }
+}
+.icons-search {
+  font-size: 25px;
+  color: rgb(220, 221, 222);
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  @include phone {
+    transform: translateY(calc(-50% + 2px));
+    cursor: pointer;
+    top: 22px;
+    left: 10px;
+    pointer-events: none;
   }
 }
 

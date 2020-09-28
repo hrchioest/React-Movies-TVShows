@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "../sass/components/containerInfo.scss";
 import MovieInfo from "./MovieInfo";
-import Video from "./Video";
+import Videos from "../sections/Videos";
+import Similar from "./Similar";
 import Hero from "./Hero";
 import TvInfo from "./TvInfo";
 import ListCast from "../sections/ListCast";
-import Similar from "../components/Similar";
+import Episodios from "../sections/Episodios";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useRouteMatch
+  useRouteMatch,
+  useParams
 } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import { info } from "../service/index";
 
 const ContainerInfo = () => {
@@ -36,73 +37,88 @@ const ContainerInfo = () => {
       <Hero background={information.backdrop_path} />
 
       <Router>
-        <div className='info-container'>
-          <div className='menu-info-details'>
+        <div className='menu-container'>
+          <NavLink
+            to={`/${url}/info`}
+            exact
+            activeClassName='selected'
+            className='tab info'
+          >
+            INFO
+          </NavLink>
+          <NavLink
+            to={`/${url}/reparto`}
+            activeClassName='selected'
+            className='tab vid'
+          >
+            REPARTO
+          </NavLink>
+          {type === "movie" ? (
             <NavLink
-              to={`${url}/info`}
+              to={`${url}/videos`}
               exact
-              activeClassName='selected'
-              className='tab info'
-            >
-              INFO
-            </NavLink>
-            <NavLink
-              to={`${url}/reparto`}
               activeClassName='selected'
               className='tab vid'
             >
-              REPARTO
+              VIDEOS
             </NavLink>
-            {type === "movie" ? (
-              <NavLink
-                to={`${url}/videos`}
-                exact
-                activeClassName='selected'
-                className='tab vid'
-              >
-                VIDEOS
-              </NavLink>
-            ) : (
-              <NavLink
-                to={`${url}/episodios`}
-                exact
-                activeClassName='selected'
-                className='tab vid'
-              >
-                EPISODIOS
-              </NavLink>
-            )}
+          ) : (
             <NavLink
-              to={`${url}/similares`}
+              to={`${url}/episodios`}
               exact
               activeClassName='selected'
-              className='tab similar'
+              className='tab vid'
             >
-              SIMILARES
+              EPISODIOS
             </NavLink>
-          </div>
+          )}
 
-          <Switch>
-            <Route path='/videos' component={Video} />
-            <Route
-              exact
-              path={`${path}/info`}
-              render={() =>
-                type === "movie" ? (
-                  <MovieInfo information={information} />
-                ) : (
-                  <TvInfo information={information} />
-                )
-              }
-            />
-            <Route path={`${path}/reparto`}>
-              <ListCast id={id} type={type} />
-            </Route>
-            <Route path={`${path}/similares`}>
-              <Similar id={id} type={type} />
-            </Route>
-          </Switch>
+          <NavLink
+            to={`/${url}/similares`}
+            exact
+            activeClassName='selected'
+            className='tab similar'
+          >
+            SIMILARES
+          </NavLink>
         </div>
+
+        <Switch>
+          <Route
+            exact
+            path={`${path}/info`}
+            render={() =>
+              type === "movie" ? (
+                <MovieInfo information={information} />
+              ) : (
+                <TvInfo information={information} />
+              )
+            }
+          />
+          <Route
+            exact
+            path={`${path}/reparto`}
+            render={() => <ListCast id={id} type={type} />}
+          />
+
+          <Route
+            exact
+            path={`/movie/${id}/videos`}
+            render={() => <Videos id={id} />}
+          />
+
+          <Route
+            exact
+            path={`${path}/seasons/:temporada`}
+            render={() => (
+              <Episodios id={id} cantTemp={information.number_of_seasons} />
+            )}
+          />
+
+          <Route path={`${path}/similares`}>
+              <Similar id={id} type={type} />
+           </Route>
+        </Switch>
       </Router>
     </>
   );

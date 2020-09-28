@@ -9,7 +9,6 @@ const Card = ({id, title, image, type}) => {
 
   
   return (
-
     <div id='card'>
       <div className='img-card'>
         <Link to ={`/${type}/${id}/info`}><img src={'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + image} alt="poster"/></Link>
@@ -20,4 +19,3 @@ const Card = ({id, title, image, type}) => {
 };
 
 export default Card;
-

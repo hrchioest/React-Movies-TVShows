@@ -1,0 +1,43 @@
+@import "../common/variables.scss";
+@import "../common/mixin.scss";
+
+#results {
+  background-color: $background;
+  box-sizing: border-box;
+  color: $text;
+  display: flex;
+  font-family: $roboto;
+  flex-basis: 80%;
+  flex-grow: 1;
+  height: auto;
+  justify-content: center;
+  width: 100%;
+  .results-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    .results-title {
+      font-size: 30px;
+      font-weight: 300;
+      margin: 0 0 30px;
+    }
+    .results-cards {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+      box-sizing: border-box;
+      .card-container {
+        width: 50%;
+        height: 300px;
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import "../sass/components/search.scss";
 import Card from "./Card";
 
+
 const SearchResults = ({ results, wordSearch }) => {
   return (
     <section id='results'>
@@ -24,3 +25,4 @@ const SearchResults = ({ results, wordSearch }) => {
 };
 
 export default SearchResults;
+

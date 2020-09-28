@@ -41,16 +41,3 @@ img {
   display: inline-flex;
   margin-top: 20px;
 }
-.box-background {
-  background-color: rgb(35, 39, 42);
-  height: 242px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 1298px) {
-    height: 195px;
-  }
-}
-.fa-image {
-  font-size: 80px;
-}

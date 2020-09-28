@@ -1,19 +1,17 @@
 import React from "react";
+import Header from "./sections/Header";
 import Home from "./sections/Home";
 import Movie from "./sections/Movie";
 import Tv from "./sections/Tv";
 import ListAll from "./sections/ListAll";
 import ContainerInfo from "./components/ContainerInfo";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Search from "./sections/Search";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-
   return (
     <Router>
       <div className='App'>
-        <Search/>
+        <Header />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/movie' component={Movie} />

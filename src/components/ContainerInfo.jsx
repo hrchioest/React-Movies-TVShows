@@ -30,7 +30,7 @@ const ContainerInfo = () => {
         setInformation(res.data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -74,7 +74,6 @@ const ContainerInfo = () => {
 
           <NavLink
             to={`/${type}/${id}/similar`}
-            exact
             activeClassName='selected'
             className='tab similar'
           >
@@ -114,7 +113,9 @@ const ContainerInfo = () => {
             )}
           />
 
-          <Route path='/similar' component={Similar} />
+          <Route path={`${path}/similares`}>
+            <Similar id={id} type={type} />
+          </Route>
         </Switch>
       </Router>
     </>

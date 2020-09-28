@@ -59,6 +59,7 @@ const ListAll = () =>{
     return(
         <>  
             <ListCard title={sections[seccion].title} api={sections[seccion].api} type={sections[seccion].type} />
+            
         </>
 
     )

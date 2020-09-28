@@ -7,8 +7,7 @@ import { faTv } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from 'react-router-dom';
 
-const Header = ({ handleInput, search }) => {
-
+const Header = () => {
   return (
     <nav id='header-nav'>
       <div className='access-nav'>
@@ -32,7 +31,7 @@ const Header = ({ handleInput, search }) => {
       </div>
       <div className='searcher-nav'>
         <FontAwesomeIcon className='icons-nav' icon={faSearch} />
-        <input type='text' placeholder='Búsqueda...' onChange={handleInput} onKeyPress={search}/> 
+        <input type='text' placeholder='Búsqueda...' />
       </div>
     </nav>
   );

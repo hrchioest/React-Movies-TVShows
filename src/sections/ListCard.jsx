@@ -50,8 +50,6 @@ const ListCard = ({ title, limit = 0, api, link, type }) => {
       </div>
     </section>
   );
-};
-
 
     return (
         <section id="main-page">

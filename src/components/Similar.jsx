@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import Card from "../components/Card";
 
-const Similar = ({ id, type, limit = 0 }) => {
+const Similar = ({ id, type, limit = 0, similars }) => {
   const [similares, setSimilares] = useState([]);
   useEffect(() => {
     axios

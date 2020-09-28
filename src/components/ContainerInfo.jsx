@@ -1,3 +1,4 @@
+ 
 import React, { useState, useEffect } from "react";
 import "../sass/components/containerInfo.scss";
 import MovieInfo from "./MovieInfo";
@@ -6,7 +7,7 @@ import Similar from "./Similar";
 import Hero from "./Hero";
 import TvInfo from "./TvInfo";
 import ListCast from "../sections/ListCast";
-import Episodios from "../sections/Episodios";
+//import Episodios from "../sections/Episodios";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import {
@@ -100,7 +101,6 @@ const ContainerInfo = () => {
             path={`${path}/reparto`}
             render={() => <ListCast id={id} type={type} />}
           />
-
           <Route
             exact
             path={`/movie/${id}/videos`}
@@ -123,5 +123,4 @@ const ContainerInfo = () => {
     </>
   );
 };
-
 export default ContainerInfo;

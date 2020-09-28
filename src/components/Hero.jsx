@@ -1,13 +1,9 @@
-import React,{useState, useEffect} from "react";
+import React from "react";
 import "../sass/components/hero.scss";
 
-
-
-
 const Hero = ({background}) => {
- 
   return (
-    <div className='hero-container'>
+      <div className='hero-container'>
       <div className='black-gradient'></div>
       <div
         className='hero-movie'

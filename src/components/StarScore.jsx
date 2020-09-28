@@ -18,7 +18,6 @@ const StarScore = ({score}) => {
         stars.push(<i key={`${i}empty`} className="far fa-star"></i>)
     }
    
-    
     return(
         <>
             <span>{stars.map(star =>star)}</span>  

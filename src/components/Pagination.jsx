@@ -13,20 +13,19 @@ const Pagination = ({ pages, currentPage, nextPage }) =>{
         
         pageLinks.push(
                 <li className={`list-numbers ${active}`} key={i} onClick={(() => nextPage(i))}>
-                    <Link className="numb">{i}</Link>
+                    <Link to={i} className="numb">{i}</Link>
                 </li>
 
         )
     }
 
     const lastPage = parseInt(pageLinks.length-1)
-    const elipsis = "...";
+    let elipsis = "...";
    
-
     const indexShow = ( indexOrder, indexOrderTwo ) =>{   //como se muestran los elementos (cada li) del pagination total (ul)           
-        if (currentPage <5){
+        if (currentPage <=5){
             indexOrder = pageLinks.slice(0, 5);
-            indexOrderTwo = pageLinks[lastPage]
+            indexOrderTwo = "";
         } else if ( (currentPage) < lastPage ) {            
             indexOrder = pageLinks.slice(currentPage-3, currentPage+3); 
             indexOrderTwo = pageLinks[lastPage]
@@ -49,7 +48,7 @@ const Pagination = ({ pages, currentPage, nextPage }) =>{
     return(
         <ul className="pagination">
             <li>
-              {currentPage === 1 ? "" : <FontAwesomeIcon icon={faArrowLeft} onClick={()=> console.log("hola")}/>}
+              {currentPage === 1 ? "" : <FontAwesomeIcon icon={faArrowLeft}/>}
             </li>
             {indexShow()}
             <li>

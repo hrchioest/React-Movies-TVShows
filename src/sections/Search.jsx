@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import axios from 'axios';
 import { multiSearch } from "../service/index";
-
 import Header from "./Header";
 import SearchResults from "../components/SearchResults";
 import Pagination from "../components/Pagination";
@@ -9,7 +8,7 @@ import Pagination from "../components/Pagination";
 const Search = () =>{
 
     const [state,setState] = useState({
-        searchTerm:"",
+        searchTerm: "",
         results: [],
         totalPages: 0,
         currentPage: 1,
@@ -50,7 +49,7 @@ const Search = () =>{
     return(
         <>
             <Header handleInput={handleInput} search={search} />
-            <SearchResults results={state.results} />
+            <SearchResults results={state.results}/>
             {state.totalPages > 20 ? <Pagination pages={numberPages} nextPage={nextPage} currentPage={state.currentPage}/> : ""}
         </>
     );

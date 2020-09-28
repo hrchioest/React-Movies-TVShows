@@ -26,12 +26,13 @@
     &:hover{
         background-color: rgb(97, 97, 97);
     }
-
     .numb{
         text-decoration: none;
         color: $text;
-        &:active{
-            background-color: rgb(97, 97, 97);
-        }
+
     }
+}
+
+.list-numbers.active{
+    background-color: rgb(97, 97, 97);
 }

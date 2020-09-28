@@ -3,6 +3,7 @@ import Header from "./sections/Header";
 import Home from "./sections/Home";
 import Movie from "./sections/Movie";
 import Tv from "./sections/Tv";
+import Footer from "./sections/Footer";
 import ListAll from "./sections/ListAll";
 import ContainerInfo from "./components/ContainerInfo";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -20,6 +21,7 @@ function App() {
           <Route path='/:type/:id' component={ContainerInfo} />
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }

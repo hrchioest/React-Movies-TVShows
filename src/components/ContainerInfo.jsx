@@ -1,3 +1,4 @@
+ 
 import React, { useState, useEffect } from "react";
 import "../sass/components/containerInfo.scss";
 import MovieInfo from "./MovieInfo";
@@ -6,7 +7,7 @@ import Similar from "./Similar";
 import Hero from "./Hero";
 import TvInfo from "./TvInfo";
 import ListCast from "../sections/ListCast";
-import Episodios from "../sections/Episodios";
+//import Episodios from "../sections/Episodios";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import {
@@ -19,7 +20,7 @@ import {
 import { info } from "../service/index";
 
 const ContainerInfo = () => {
-  const { path } = useRouteMatch();
+  const { path, url } = useRouteMatch();
   const { id, type } = useParams();
 
   const [information, setInformation] = useState([]);
@@ -30,15 +31,16 @@ const ContainerInfo = () => {
         setInformation(res.data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [id]);
 
   return (
     <>
       <Hero background={information.backdrop_path} />
+
       <Router>
         <div className='menu-container'>
           <NavLink
-            to={`/${type}/${id}/info`}
+            to={`/${url}/info`}
             exact
             activeClassName='selected'
             className='tab info'
@@ -46,7 +48,7 @@ const ContainerInfo = () => {
             INFO
           </NavLink>
           <NavLink
-            to={`/${type}/${id}/reparto`}
+            to={`/${url}/reparto`}
             activeClassName='selected'
             className='tab vid'
           >
@@ -54,7 +56,7 @@ const ContainerInfo = () => {
           </NavLink>
           {type === "movie" ? (
             <NavLink
-              to={`/movie/${id}/videos`}
+              to={`${url}/videos`}
               exact
               activeClassName='selected'
               className='tab vid'
@@ -63,7 +65,7 @@ const ContainerInfo = () => {
             </NavLink>
           ) : (
             <NavLink
-              to={`/tv/${id}/seasons/1`}
+              to={`${url}/episodios`}
               exact
               activeClassName='selected'
               className='tab vid'
@@ -73,7 +75,7 @@ const ContainerInfo = () => {
           )}
 
           <NavLink
-            to={`/${type}/${id}/similar`}
+            to={`/${url}/similares`}
             exact
             activeClassName='selected'
             className='tab similar'
@@ -99,7 +101,6 @@ const ContainerInfo = () => {
             path={`${path}/reparto`}
             render={() => <ListCast id={id} type={type} />}
           />
-
           <Route
             exact
             path={`/movie/${id}/videos`}
@@ -114,11 +115,12 @@ const ContainerInfo = () => {
             )}
           />
 
-          <Route path='/similar' component={Similar} />
+          <Route path={`${path}/similares`}>
+              <Similar id={id} type={type} />
+           </Route>
         </Switch>
       </Router>
     </>
   );
 };
-
 export default ContainerInfo;

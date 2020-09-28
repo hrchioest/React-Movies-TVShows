@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
 
+
 const ListCard = ({ title, limit = 0, api, link, type }) => {
     const [list, setList] = useState([]);
 
@@ -15,6 +16,40 @@ const ListCard = ({ title, limit = 0, api, link, type }) => {
                 setList(res.data.results);
             }).catch(error => console.log(error))
     }, []);
+
+  return (
+    <section id='main-page'>
+      <div className='list-main-page'>
+        <a href={link}>
+          <h2>
+            {title}
+            {link ? (
+              <Link to={link}>
+                <FontAwesomeIcon className='arrow-list' icon={faArrowRight} />
+              </Link>
+            ) : (
+              ""
+            )}
+          </h2>
+        </a>
+        <div className='card-list-container'>
+          {list.map((movie, i) => {
+            if (i < limit || limit === 0) {
+              return (
+                <Card
+                  key={i}
+                  id={movie.id}
+                  type={type}
+                  image={movie.poster_path}
+                  title={movie.title || movie.name}
+                />
+              );
+            }
+          })}
+        </div>
+      </div>
+    </section>
+  );
 
     return (
         <section id="main-page">
@@ -34,6 +69,7 @@ const ListCard = ({ title, limit = 0, api, link, type }) => {
                         }
                     })
                     }
+
                 </div>
             </div>
         </section>
@@ -41,4 +77,5 @@ const ListCard = ({ title, limit = 0, api, link, type }) => {
 }
 
 export default ListCard;
+
 

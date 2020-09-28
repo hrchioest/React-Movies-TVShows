@@ -1,4 +1,3 @@
-import { TRUE } from 'node-sass';
 import React from 'react';
 import "../sass/components/search.scss";
 import Card from "./Card";

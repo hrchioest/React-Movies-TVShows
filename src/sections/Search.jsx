@@ -12,6 +12,7 @@ const Search = () =>{
         results: [],
         totalPages: 0,
         currentPage: 1,
+        
     });
     
     const search = (e) =>{ 

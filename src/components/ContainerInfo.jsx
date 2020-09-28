@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../sass/components/containerInfo.scss";
 import MovieInfo from "./MovieInfo";
+import Video from "./Video";
+import Hero from "./Hero";
+import TvInfo from "./TvInfo";
+import ListCast from "../sections/ListCast";
+import Similar from "../components/Similar";
 import Videos from "../sections/Videos";
 import Similar from "./Similar";
 import Hero from "./Hero";
@@ -13,6 +18,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useRouteMatch
+} from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { info } from "../service/index";
+
+const ContainerInfo = () => {
+  const { path, url } = useRouteMatch();
+
   useRouteMatch,
   useParams
 } from "react-router-dom";
@@ -30,92 +43,79 @@ const ContainerInfo = () => {
         setInformation(res.data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [id]);
 
   return (
     <>
       <Hero background={information.backdrop_path} />
       <Router>
-        <div className='menu-container'>
-          <NavLink
-            to={`/${type}/${id}/info`}
-            exact
-            activeClassName='selected'
-            className='tab info'
-          >
-            INFO
-          </NavLink>
-          <NavLink
-            to={`/${type}/${id}/reparto`}
-            activeClassName='selected'
-            className='tab vid'
-          >
-            REPARTO
-          </NavLink>
-          {type === "movie" ? (
+        <div className='info-container'>
+          <div className='menu-info-details'>
             <NavLink
-              to={`/movie/${id}/videos`}
+              to={`${url}/info`}
               exact
+              activeClassName='selected'
+              className='tab info'
+            >
+              INFO
+            </NavLink>
+            <NavLink
+              to={`${url}/reparto`}
               activeClassName='selected'
               className='tab vid'
             >
-              VIDEOS
+              REPARTO
             </NavLink>
-          ) : (
-            <NavLink
-              to={`/tv/${id}/seasons/1`}
-              exact
-              activeClassName='selected'
-              className='tab vid'
-            >
-              EPISODIOS
-            </NavLink>
-          )}
-
-          <NavLink
-            to={`/${type}/${id}/similar`}
-            exact
-            activeClassName='selected'
-            className='tab similar'
-          >
-            SIMILARES
-          </NavLink>
-        </div>
-
-        <Switch>
-          <Route
-            exact
-            path={`${path}/info`}
-            render={() =>
-              type === "movie" ? (
-                <MovieInfo information={information} />
-              ) : (
-                <TvInfo information={information} />
-              )
-            }
-          />
-          <Route
-            exact
-            path={`${path}/reparto`}
-            render={() => <ListCast id={id} type={type} />}
-          />
-
-          <Route
-            exact
-            path={`/movie/${id}/videos`}
-            render={() => <Videos id={id} />}
-          />
-
-          <Route
-            exact
-            path={`${path}/seasons/:temporada`}
-            render={() => (
-              <Episodios id={id} cantTemp={information.number_of_seasons} />
+            {type === "movie" ? (
+              <NavLink
+                to={`${url}/videos`}
+                exact
+                activeClassName='selected'
+                className='tab vid'
+              >
+                VIDEOS
+              </NavLink>
+            ) : (
+              <NavLink
+                to={`${url}/episodios`}
+                exact
+                activeClassName='selected'
+                className='tab vid'
+              >
+                EPISODIOS
+              </NavLink>
             )}
-          />
+            <NavLink
+              to={`${url}/similares`}
+              exact
+              activeClassName='selected'
+              className='tab similar'
+            >
+              SIMILARES
+            </NavLink>
+          </div>
 
-          <Route path='/similar' component={Similar} />
-        </Switch>
+          <Switch>
+            <Route path='/videos' component={Video} />
+            <Route
+              exact
+              path={`${path}/info`}
+              render={() =>
+                type === "movie" ? (
+                  <MovieInfo information={information} />
+                ) : (
+                  <TvInfo information={information} />
+                )
+              }
+            />
+            <Route path={`${path}/reparto`}>
+              <ListCast id={id} type={type} />
+            </Route>
+            <Route path={`${path}/similares`}>
+              <Similar id={id} type={type} />
+            </Route>
+          </Switch>
+        </div>
       </Router>
     </>
   );

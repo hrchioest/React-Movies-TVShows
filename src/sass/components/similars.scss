@@ -1,0 +1,15 @@
+@import "../common/mixin.scss";
+@import "../common/variables.scss";
+
+
+.similars-box {
+    box-sizing: border-box;
+    max-width: 2400px;
+    padding: 20px;
+    margin: 20px;
+    width: 100%;
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}

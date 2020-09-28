@@ -14,14 +14,12 @@ const ListCast = ({id, type}) =>{
             setCastInfo(res.data.cast);
         }).catch(error => console.log(error))
     },[]);
-    console.log({id})
-    console.log({castInfo})
+
     return(
         <section id="main-page">
             <div className='list-main-page'>
                 <div className='card-list-container'>
                     {castInfo.map((castInfo, i) => {
-                    console.log(castInfo.profile_path)
                         return (
                             <Cast key={i} id={castInfo.id} image={castInfo.profile_path } name={castInfo.name} character={castInfo.character}/>
                         )

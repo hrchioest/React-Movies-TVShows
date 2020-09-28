@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Video from "../components/Video";
+import {videos} from "../service/index";
 import axios from "axios";
 import { videoMovie } from "../service/index";
 import "../sass/sections/videos.scss";
+import { useEffect } from 'react';
 
 const Videos = ({ id }) => {
   const [trailer, setTrailer] = useState([]);
@@ -14,6 +16,7 @@ const Videos = ({ id }) => {
       })
       .catch((error) => console.log(error));
   }, [id]);
+
 
   return (
     <div className='container-videos'>

@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from "react";
-import Card from "../components/Card";
+import React, { useEffect, useState } from 'react';
+import Card from '../components/Card';
 import "../sass/sections/main-pages.scss";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 
 
 const ListCard = ({ title, limit = 0, api, link, type }) => {
-  const [list, setList] = useState([]);
+    const [list, setList] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get(api)
-      .then((res) => {
-        setList(res.data.results);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+    useEffect(() => {
+        axios.get(api)
+            .then(res => {
+                setList(res.data.results);
+            }).catch(error => console.log(error))
+    }, []);
 
 
     return (
@@ -38,6 +37,12 @@ const ListCard = ({ title, limit = 0, api, link, type }) => {
                         }
                     })
                     }
-                  )
 
-                  export default ListCard;
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default ListCard;
+

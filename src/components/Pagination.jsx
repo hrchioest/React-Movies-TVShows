@@ -24,7 +24,6 @@ const Pagination = ({ pages, currentPage, nextPage }) =>{
     let lastPage= pageLinks.length-1;
     let elipsis="...";
     
-
     const indexShow = ( indexOrderOne, indexOrderTwo, indexZero, elipsisA=null ) =>{   //como se muestran los elementos (cada li) del pagination total (ul)           
         if (pages <=5){
             indexOrderOne = pageLinks.slice(0, 5);

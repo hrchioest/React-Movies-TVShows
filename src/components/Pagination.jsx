@@ -1,64 +1,76 @@
 import React from "react";
 import "../sass/components/pagination.scss";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-const Pagination = ({ pages, currentPage, nextPage }) =>{
+const Pagination = ({ pages, currentPage, nextPage }) => {
+  const pageLinks = [];
 
-    const pageLinks = [];
+  for (let i = 1; i <= pages + 1; i++) {
+    let active = currentPage === i ? "active" : "";
 
-    for(let i = 1;  i <= pages + 1; i++){
-        let active = currentPage === i ? 'active' : '';
-        
-        pageLinks.push(
-                <li className={`list-numbers ${active}`} key={i} onClick={(() => nextPage(i))}>
-                    <Link className="numb">{i}</Link>
-                </li>
+    pageLinks.push(
+      <li
+        className={`list-numbers ${active}`}
+        key={i}
+        onClick={() => nextPage(i)}
+      >
+        <Link className='numb'>{i}</Link>
+      </li>
+    );
+  }
 
-        )
+  const lastPage = parseInt(pageLinks.length - 1);
+  const elipsis = "...";
+
+  const indexShow = (indexOrder, indexOrderTwo) => {
+    //como se muestran los elementos (cada li) del pagination total (ul)
+    if (currentPage < 5) {
+      indexOrder = pageLinks.slice(0, 5);
+      indexOrderTwo = pageLinks[lastPage];
+    } else if (currentPage < lastPage) {
+      indexOrder = pageLinks.slice(currentPage - 3, currentPage + 3);
+      indexOrderTwo = pageLinks[lastPage];
+    } else {
+      indexOrder = [pageLinks[0]];
+      indexOrderTwo = pageLinks.slice(currentPage - 6, currentPage);
     }
+    return (
+      <>
+        {indexOrder}
+        {elipsis}
+        {indexOrderTwo}
+      </>
+    );
+  };
 
-    const lastPage = parseInt(pageLinks.length-1)
-    const elipsis = "...";
-   
+  const previousPage = () => {};
 
-    const indexShow = ( indexOrder, indexOrderTwo ) =>{   //como se muestran los elementos (cada li) del pagination total (ul)           
-        if (currentPage <5){
-            indexOrder = pageLinks.slice(0, 5);
-            indexOrderTwo = pageLinks[lastPage]
-        } else if ( (currentPage) < lastPage ) {            
-            indexOrder = pageLinks.slice(currentPage-3, currentPage+3); 
-            indexOrderTwo = pageLinks[lastPage]
-        } else {
-            indexOrder = [pageLinks[0]]
-            indexOrderTwo = pageLinks.slice(currentPage-6,currentPage); 
-        }
-        return(
-            <>
-                {indexOrder}{elipsis}{indexOrderTwo}
-            </>
-        )
+  const followPage = () => {};
 
-    }
-
-    const previousPage = () =>{}
-
-    const followPage = () =>{}
-  
-    return(
-        <ul className="pagination">
-            <li>
-              {currentPage === 1 ? "" : <FontAwesomeIcon icon={faArrowLeft} onClick={()=> console.log("hola")}/>}
-            </li>
-            {indexShow()}
-            <li>
-            {currentPage === parseInt(pageLinks.length) ? "" : <FontAwesomeIcon icon={faArrowRight}/>}
-            </li>
-        </ul>
-    )  
-}
+  return (
+    <ul className='pagination'>
+      <li>
+        {currentPage === 1 ? (
+          ""
+        ) : (
+          <FontAwesomeIcon
+            icon={faArrowLeft}
+            onClick={() => console.log("hola")}
+          />
+        )}
+      </li>
+      {indexShow()}
+      <li>
+        {currentPage === parseInt(pageLinks.length) ? (
+          ""
+        ) : (
+          <FontAwesomeIcon icon={faArrowRight} />
+        )}
+      </li>
+    </ul>
+  );
+};
 
 export default Pagination;
-
-

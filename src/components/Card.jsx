@@ -14,7 +14,7 @@ const Card = ({ id, title, image, type }) => {
               alt='poster'
             />
           ) : (
-            <img className='img-not-support' src={imageNotSupported} />
+            <img className='img-not-support' src={imageNotSupported} alt="imagen-not-supported"/>
           )}
         </Link>
       </div>

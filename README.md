@@ -1,3 +1,12 @@
-Proyecto final de cursada en Ada. Es una app de series y películas que trabaja con la siguiente API:  https://api.themoviedb.org
+# Catalog-Movies-TvShows
+### Proyecto final de Ada ITW
 
-Las conocimientos utilizados son HTML, CSS, Sass, Javascript, React y Responsive Design.
+Esta app es un catálogo de series y películas responsive, que fue elaborada en conjunto con mis compañeras: 
+[Giuliana](https://github.com/giuli3022) y [Dolores](https://github.com/dperezlaborda)
+
+- Es desarrollado con React Js.
+- Consume la API:  https://api.themoviedb.org
+
+
+
+

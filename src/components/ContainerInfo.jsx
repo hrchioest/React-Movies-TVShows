@@ -30,7 +30,7 @@ const ContainerInfo = () => {
         setInformation(res.data);
       })
       .catch((error) => console.log(error));
-  }, [id]);
+  }, [id, type]);
 
   return (
     <>

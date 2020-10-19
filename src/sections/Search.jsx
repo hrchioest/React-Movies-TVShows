@@ -27,7 +27,7 @@ const Search = () => {
             ...prevState,
             totalResults: data.total_results,
             results: results,
-            currentPage: numPage
+            currentPage: parseInt(numPage)
           };
         });
 

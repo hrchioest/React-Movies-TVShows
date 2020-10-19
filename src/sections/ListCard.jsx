@@ -21,18 +21,17 @@ const ListCard = ({ title, limit = 0, api, link, type }) => {
   return (
     <section id='main-page'>
       <div className='list-main-page'>
-        <a href={link}>
-          <h2>
-            {title}
-            {link ? (
-              <Link to={link}>
-                <FontAwesomeIcon className='arrow-list' icon={faArrowRight} />
-              </Link>
-            ) : (
-              ""
-            )}
-          </h2>
-        </a>
+        <h2>
+          {title}
+          {link ? (
+            <Link to={link}>
+              <FontAwesomeIcon className='arrow-list' icon={faArrowRight} />
+            </Link>
+          ) : (
+            ""
+          )}
+        </h2>
+
         <div className='card-list-container'>
           {list.map((movie, i) => {
             if (i < limit || limit === 0) {

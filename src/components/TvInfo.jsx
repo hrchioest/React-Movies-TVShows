@@ -21,9 +21,9 @@ const TvInfo = ({
   if (genres) {
     genresList = genres.map((g, i) => {
       return (
-        <a href='#' key={i} className='bttn accion'>
+        <span key={i} className='bttn accion'>
           {g.name}
-        </a>
+        </span>
       );
     });
   }

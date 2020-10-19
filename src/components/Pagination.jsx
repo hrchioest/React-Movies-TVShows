@@ -1,6 +1,5 @@
 import React from "react";
 import "../sass/components/pagination.scss";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -16,22 +15,26 @@ const Pagination = ({ pages, currentPage, nextPage }) => {
         key={i}
         onClick={() => nextPage(i)}
       >
-        <Link className='numb'>{i}</Link>
+        <span className='numb'>{i}</span>
       </li>
     );
   }
 
-  const lastPage = parseInt(pageLinks.length - 1);
+  const lastPage = parseInt(pageLinks.length);
   const elipsis = "...";
 
-  const indexShow = (indexOrder, indexOrderTwo) => {
-    //como se muestran los elementos (cada li) del pagination total (ul)
-    if (currentPage < 5) {
+  const indexShow = () => {
+    let indexOrder;
+    let indexOrderTwo;
+    if (currentPage < 6) {
       indexOrder = pageLinks.slice(0, 5);
-      indexOrderTwo = pageLinks[lastPage];
+      indexOrderTwo = pageLinks[lastPage - 1];
     } else if (currentPage < lastPage) {
-      indexOrder = pageLinks.slice(currentPage - 3, currentPage + 3);
-      indexOrderTwo = pageLinks[lastPage];
+      indexOrder = pageLinks.slice(
+        currentPage - 2,
+        currentPage + 3 > lastPage ? lastPage - 1 : currentPage + 3
+      );
+      indexOrderTwo = pageLinks[lastPage - 1];
     } else {
       indexOrder = [pageLinks[0]];
       indexOrderTwo = pageLinks.slice(currentPage - 6, currentPage);
@@ -51,23 +54,23 @@ const Pagination = ({ pages, currentPage, nextPage }) => {
 
   return (
     <ul className='pagination'>
-      <li class='arrow'>
+      <li className='arrow'>
         {currentPage === 1 ? (
           ""
         ) : (
-          <Link className='arrowPress'>
+          <span className='arrowPress'>
             <FontAwesomeIcon icon={faArrowLeft} onClick={previousPage} />
-          </Link>
+          </span>
         )}
       </li>
       {indexShow()}
-      <li class='arrow'>
+      <li className='arrow'>
         {currentPage === parseInt(pageLinks.length) ? (
           ""
         ) : (
-          <Link className='arrowPress'>
+          <span className='arrowPress'>
             <FontAwesomeIcon icon={faArrowRight} onClick={followPage} />
-          </Link>
+          </span>
         )}
       </li>
     </ul>

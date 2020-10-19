@@ -45,28 +45,29 @@ const Pagination = ({ pages, currentPage, nextPage }) => {
     );
   };
 
-  const previousPage = () => {};
+  const previousPage = () => nextPage(parseInt(currentPage - 1));
 
-  const followPage = () => {};
+  const followPage = () => nextPage(parseInt(currentPage) + 1);
 
   return (
     <ul className='pagination'>
-      <li>
+      <li class='arrow'>
         {currentPage === 1 ? (
           ""
         ) : (
-          <FontAwesomeIcon
-            icon={faArrowLeft}
-            onClick={() => console.log("hola")}
-          />
+          <Link className='arrowPress'>
+            <FontAwesomeIcon icon={faArrowLeft} onClick={previousPage} />
+          </Link>
         )}
       </li>
       {indexShow()}
-      <li>
+      <li class='arrow'>
         {currentPage === parseInt(pageLinks.length) ? (
           ""
         ) : (
-          <FontAwesomeIcon icon={faArrowRight} />
+          <Link className='arrowPress'>
+            <FontAwesomeIcon icon={faArrowRight} onClick={followPage} />
+          </Link>
         )}
       </li>
     </ul>

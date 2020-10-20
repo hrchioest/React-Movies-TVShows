@@ -66,7 +66,7 @@
       width: 100%;
       .fa-star,
       .fa-star-half-alt {
-        color: rgb(33, 150, 243);
+        color: $lightBlue;
         height: 20px;
         margin-right: 3px;
         width: 20px;
@@ -79,12 +79,12 @@
 }
 
 .bttn {
-  color: rgb(33, 150, 243);
+  color: $lightBlue;
   cursor: pointer;
   margin: 5px;
   text-decoration: none;
   transition: all 0.3s ease 0s;
   &:hover {
-    color: #161cf9;
+    color: $blue;
   }
 }

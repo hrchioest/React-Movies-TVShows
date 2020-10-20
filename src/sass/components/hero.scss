@@ -2,7 +2,7 @@
 @import "../common/variables.scss";
 .hero-container {
   box-sizing: border-box;
-  background-color: rgb(0, 0, 0);
+  background-color: $black;
   height: 300px;
   position: relative;
   width: 100%;
@@ -15,7 +15,7 @@
   .black-gradient {
     background: linear-gradient(
       to top,
-      rgb(0, 0, 0) 0px,
+      $black 0px,
       transparent 50%,
       transparent
     );

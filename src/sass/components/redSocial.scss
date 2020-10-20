@@ -22,7 +22,7 @@
     cursor: pointer;
     transition: all 0.9s ease 0;
     &:hover {
-      color: rgb(33, 150, 243);
+      color: $lightBlue;
       transform: scale(1.1);
     }
   }

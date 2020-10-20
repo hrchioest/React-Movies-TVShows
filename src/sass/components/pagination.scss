@@ -24,7 +24,7 @@
   margin: 3px;
   transition: all 0.2s ease 0s;
   &:hover {
-    background-color: rgb(97, 97, 97);
+    background-color: $gray;
   }
 
   .numb {
@@ -33,7 +33,7 @@
   }
 }
 .active {
-  background-color: rgb(97, 97, 97);
+  background-color: $gray;
 }
 
 .arrow {
@@ -46,7 +46,7 @@
   position: relative;
 
   &:hover {
-    background-color: rgb(97, 97, 97);
+    background-color: $gray;
   }
 }
 

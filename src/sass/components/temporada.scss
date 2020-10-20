@@ -23,17 +23,17 @@ img {
 }
 .episodio {
   font-size: 14px;
-  color: rgb(33, 150, 243);
+  color: $lightBlue;
   margin-right: 10px;
   font-weight: bold;
 }
 .title {
   font-size: 16px;
-  color: rgb(220, 221, 222);
+  color: $whiteGray;
   margin: auto;
 }
 .paragraph {
-  color: rgb(220, 221, 222);
+  color: $whiteGray;
   font-size: 14px;
   line-height: 20px;
 }
@@ -42,7 +42,7 @@ img {
   margin-top: 20px;
 }
 .box-background {
-  background-color: rgb(35, 39, 42);
+  background-color: $darkGray;
   height: 242px;
   display: flex;
   align-items: center;

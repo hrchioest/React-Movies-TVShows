@@ -1,32 +1,28 @@
 @import "../common/mixin.scss";
 @import "../common/variables.scss";
 
-.menu-container{
-    align-items: flex-start;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    margin: 20px 0 10px;
-    padding: 20px 0;
-    .tab{
-        color:#A8AAAD;
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: bold;
-        margin: 10px;
-        padding-bottom: 10px;
-        text-decoration:none;
-        &:hover{
-            color:#dcddde;
-        }
-
+.menu-container {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0 10px;
+  padding: 20px 0;
+  .tab {
+    color: $lightGray;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    &:hover {
+      color: $smokeGray;
     }
-    .selected{
-        border-bottom: 2px solid rgb(220, 221, 222);
-        color:#dcddde;
-    }
+  }
+  .selected {
+    border-bottom: 2px solid $whiteGray;
+    color: $smokeGray;
+  }
 }
-
-
-

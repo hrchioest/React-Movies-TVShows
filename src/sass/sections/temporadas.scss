@@ -2,13 +2,13 @@
 @import "../common/variables.scss";
 
 .temporadas {
-  background-color: rgb(54, 57, 63);
+  background-color: $darkSmoke;
   max-width: 1400px;
   padding: 20px;
 }
 select {
-  background: #23272a;
-  color: rgb(220, 221, 222);
+  background: $menu;
+  color: $whiteGray;
 }
 option {
   color: white;
@@ -30,8 +30,8 @@ option {
   border-radius: 6px;
   border-width: 1px;
   border-style: solid;
-  border-color: rgb(220, 221, 222);
-  color: rgb(220, 221, 222);
+  border-color: rgb$whiteGray;
+  color: $whiteGray;
   border-image: initial;
   width: 100%;
 }

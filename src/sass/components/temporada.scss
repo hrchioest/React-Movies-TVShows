@@ -5,13 +5,13 @@
   width: calc(33.3333% - 13.3333px);
   margin-bottom: 20px;
   padding: 6px;
-  @media (min-width: 1025px) {
+  @mixin desktop {
     width: calc(33.3333%-33.3333px);
   }
-  @media (max-width: 1024px) {
+  @mixin tablet {
     width: calc(50% - 20px);
   }
-  @media (max-width: 767px) {
+  @mixin phone {
     width: calc(100%);
   }
 }

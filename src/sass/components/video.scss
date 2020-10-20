@@ -2,13 +2,13 @@
 @import "../common/variables.scss";
 
 .youtube {
-  @media (min-width: 1025px) {
+  @mixin desktop {
     height: 300px;
   }
-  @media (max-width: 1024px) {
+  @mixin tablet {
     height: 238px;
   }
-  @media (max-width: 767px) {
+  @mixin phone {
     height: 194px;
   }
 }

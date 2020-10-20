@@ -9,10 +9,10 @@
   justify-content: space-around;
   padding: 45px;
 
-  @media (max-width: 1024px) {
+  @mixin tablet {
     padding: 32px;
   }
-  @media (max-width: 767px) {
+  @mixin phone {
     padding: 40px;
   }
 }

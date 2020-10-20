@@ -2,59 +2,69 @@
 @import "../common/variables";
 
 #main-page {
-    width: 100%;
-    height: auto;
-    background-color: $background;
-    font-family: $roboto;
-    color: $text;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: flex-start;
+  width: 100%;
+  height: auto;
+  background-color: $background;
+  font-family: $roboto;
+  color: $text;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .list-main-page {
-    width: 100%;
-    max-width: 1400px;
-    overflow: hidden;
-    padding: 20px;
-    box-sizing: border-box;
-    a {
-        color: $text;
-        text-decoration: none;
-        h2 {
-            font-size: 32px;
-            font-weight: 300;
-            margin: 25px 0 25px 0;
-            @include phone {
-                font-size: 20px;
-            }
-        }
+  width: 100%;
+  max-width: 1400px;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  a {
+    color: $text;
+    text-decoration: none;
+    h2 {
+      font-size: 32px;
+      font-weight: 300;
+      margin: 25px 0 25px 0;
+      @include phone {
+        font-size: 20px;
+      }
     }
-    @include phone {
-        height: 560px;
-    }
-    @include tablet {
-        height: 500px;
-    }
+  }
+  @include phone {
+    height: 560px;
+  }
+  @include tablet {
+    height: 500px;
+  }
+}
+.list-cast {
+  @include phone {
+    height: auto;
+  }
 }
 
 .card-list-container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: content-box;
+  @include phone {
     width: 100%;
+    height: 560px;
     box-sizing: content-box;
-    @include phone {
-        width: 100%;
-        height: 550px;
-        box-sizing: content-box;
-    }
+  }
+}
+.cast {
+  @include phone {
+    height: auto;
+  }
 }
 
 .arrow-list {
-    font-size: 20px;
-    color: $accent;
-    padding-left: 10px;
+  font-size: 20px;
+  color: $accent;
+  padding-left: 10px;
 }

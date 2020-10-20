@@ -6,17 +6,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const ListCard = ({ title, limit = 0, api, link, type }) => {
+const ListCard = ({
+  title,
+  limit = 0,
+  api,
+  link,
+  type,
+  setTotalPage,
+  currentPage
+}) => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
     axios
-      .get(api)
+      .get(api.replace("[page]", currentPage))
       .then((res) => {
+        if (setTotalPage) setTotalPage(res.data.total_pages);
         setList(res.data.results);
       })
       .catch((error) => console.log(error));
-  }, []);
+    console.log(currentPage);
+  }, [api, currentPage, setTotalPage]);
 
   return (
     <section id='main-page'>
@@ -33,18 +43,19 @@ const ListCard = ({ title, limit = 0, api, link, type }) => {
         </h2>
 
         <div className='card-list-container'>
-          {list.map((movie, i) => {
+          {list.map((movieTv, i) => {
             if (i < limit || limit === 0) {
               return (
                 <Card
                   key={i}
-                  id={movie.id}
+                  id={movieTv.id}
                   type={type}
-                  image={movie.poster_path}
-                  title={movie.title || movie.name}
+                  image={movieTv.poster_path}
+                  title={movieTv.title || movieTv.name}
                 />
               );
             }
+            return null;
           })}
         </div>
       </div>

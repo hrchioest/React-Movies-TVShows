@@ -10,5 +10,7 @@ Esta app es un catálogo de series y películas responsive, que fue elaborada en
 
 **Ver online**: https://ada-movies-tvshow.netlify.app/
 
+![pag](https://raw.githubusercontent.com/hrchioest/React-Movies-TVShows/master/public/screenshot.png)
+
 
 

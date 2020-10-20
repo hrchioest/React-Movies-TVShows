@@ -53,6 +53,9 @@ img.img-user {
   display: flex;
   justify-content: center;
   align-items: center;
+  @include tablet {
+    background-color: inherit;
+  }
 }
 #card:hover {
   .img-card {

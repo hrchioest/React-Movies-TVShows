@@ -9,49 +9,64 @@ const Footer = () => {
     <section className='container-footer'>
       <div className='names-box'>
         <h3>Designed and built by</h3>
-        <ul>
-          <li>
-            Rocío Esteban
-            <a
-              href={`https://www.linkedin.com/in/rocio-esteban/`}
-              className='links-footer'
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a href={`https://github.com/hrchioest`} className='links-footer'>
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </li>
-
-          <li>
-            Dolores Perez Laborda
-            <a
-              href={`https://www.linkedin.com/in/dolores-perez-laborda/`}
-              className='links-footer'
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a
-              href={`https://github.com/dperezlaborda`}
-              className='links-footer'
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </li>
-
-          <li>
-            Giuliana Cecchetto
-            <a
-              href={`https://www.linkedin.com/in/giuliana-cecchetto/`}
-              className='links-footer'
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a href={`https://github.com/giuli3022`} className='links-footer'>
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </li>
-        </ul>
+        <div className='container-list'>
+          <ul>
+            <li>
+              <div>Rocío</div>
+              <div>Esteban</div>
+              <div>
+                <a
+                  href={`https://www.linkedin.com/in/rocio-esteban/`}
+                  className='links-footer'
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a
+                  href={`https://github.com/hrchioest`}
+                  className='links-footer'
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </div>
+            </li>
+            <li>
+              <div>Dolores</div>
+              <div>Perez</div>
+              <div>
+                <a
+                  href={`https://www.linkedin.com/in/dolores-perez-laborda/`}
+                  className='links-footer'
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a
+                  href={`https://github.com/dperezlaborda`}
+                  className='links-footer'
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </div>
+            </li>
+            <li>
+              <div>Giuliana</div>
+              <div>Cecchetto</div>
+              <div>
+                <a
+                  href={`https://www.linkedin.com/in/giuliana-cecchetto/`}
+                  className='links-footer'
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a
+                  href={`https://github.com/giuli3022`}
+                  className='links-footer'
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className='rights-box'>

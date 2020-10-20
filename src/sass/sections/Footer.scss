@@ -12,6 +12,9 @@
   text-align: center;
   h3 {
     color: $text;
+    @include phone {
+      text-align: center;
+    }
   }
   ul {
     display: flex;
@@ -28,6 +31,13 @@
         }
       }
     }
+    @include phone {
+      justify-content: space-between;
+      margin-right: 18px;
+    }
+  }
+  @include phone {
+    text-align: inherit;
   }
 }
 
@@ -42,4 +52,8 @@
       color: white;
     }
   }
+}
+li div {
+  display: inline-block;
+  padding: 4px;
 }

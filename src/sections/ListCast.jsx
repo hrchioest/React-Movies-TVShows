@@ -18,10 +18,9 @@ const ListCast = ({ id, type }) => {
 
   return (
     <section id='main-page'>
-      <div className='list-main-page'>
-        <div className='card-list-container'>
+      <div className='list-main-page list-cast'>
+        <div className='card-list-container cast'>
           {castInfo.map((castInfo, i) => {
-            console.log(castInfo.profile_path);
             return (
               <Cast
                 key={i}

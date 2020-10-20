@@ -17,7 +17,7 @@ const RedSocial = ({ id, type }) => {
         setsocialMedia(res.data);
       })
       .catch((error) => console.log(error));
-  }, [id]);
+  }, [id, type]);
 
   return (
     <div className='links'>

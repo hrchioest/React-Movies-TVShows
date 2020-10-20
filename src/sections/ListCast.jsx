@@ -14,7 +14,7 @@ const ListCast = ({ id, type }) => {
         setCastInfo(res.data.cast);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [id, type]);
 
   return (
     <section id='main-page'>

@@ -13,7 +13,7 @@ const Similar = ({ id, type, limit = 0 }) => {
         setSimilares(res.data.results);
       })
       .catch((error) => console.log(error));
-  }, [id]);
+  }, [id, type]);
 
   return (
     <div className='similars-box'>
@@ -29,6 +29,7 @@ const Similar = ({ id, type, limit = 0 }) => {
             />
           );
         }
+        return null;
       })}
     </div>
   );

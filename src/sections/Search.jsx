@@ -19,9 +19,6 @@ const Search = () => {
     axios(multiSearch + "&query=" + wordSearch + "&page=" + numPage).then(
       ({ data }) => {
         let results = data.results;
-
-        console.log(data);
-
         setState((prevState) => {
           return {
             ...prevState,

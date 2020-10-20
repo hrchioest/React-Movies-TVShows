@@ -23,7 +23,11 @@ function App() {
             path='/multi/:wordSearch/page/:numPage'
             component={Search}
           />
-          <Route exact path='/:seccion/trending' component={ListAll} />
+          <Route
+            exact
+            path='/:seccion/trending/page/:numPage'
+            component={ListAll}
+          />
           <Route path='/:type/:id' component={ContainerInfo} />
         </Switch>
       </div>

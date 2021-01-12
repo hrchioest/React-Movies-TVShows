@@ -9,13 +9,7 @@ import ListCast from "../sections/ListCast";
 import Episodios from "../sections/Episodios";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
+import { Switch, Route, useRouteMatch, useParams } from "react-router-dom";
 import { info } from "../service/index";
 
 const ContainerInfo = () => {
@@ -35,90 +29,87 @@ const ContainerInfo = () => {
   return (
     <>
       <Hero background={information.backdrop_path} />
-      <Router>
-        <div className='menu-container'>
+      <div className='menu-container'>
+        <NavLink
+          to={`/${type}/${id}/info`}
+          exact
+          activeClassName='selected'
+          className='tab info'
+        >
+          INFO
+        </NavLink>
+        <NavLink
+          to={`/${type}/${id}/reparto`}
+          activeClassName='selected'
+          className='tab vid'
+        >
+          REPARTO
+        </NavLink>
+        {type === "movie" ? (
           <NavLink
-            to={`/${type}/${id}/info`}
+            to={`/movie/${id}/videos`}
             exact
-            activeClassName='selected'
-            className='tab info'
-          >
-            INFO
-          </NavLink>
-          <NavLink
-            to={`/${type}/${id}/reparto`}
             activeClassName='selected'
             className='tab vid'
           >
-            REPARTO
+            VIDEOS
           </NavLink>
-          {type === "movie" ? (
-            <NavLink
-              to={`/movie/${id}/videos`}
-              exact
-              activeClassName='selected'
-              className='tab vid'
-            >
-              VIDEOS
-            </NavLink>
-          ) : (
-            <NavLink
-              to={`/tv/${id}/seasons/1`}
-              exact
-              activeClassName='selected'
-              className='tab vid'
-            >
-              EPISODIOS
-            </NavLink>
-          )}
-
+        ) : (
           <NavLink
-            to={`/${type}/${id}/similares`}
+            to={`/tv/${id}/seasons/1`}
             exact
             activeClassName='selected'
-            className='tab similar'
+            className='tab vid'
           >
-            SIMILARES
+            EPISODIOS
           </NavLink>
-        </div>
+        )}
 
-        <Switch>
-          <Route
-            exact
-            path={`${path}/info`}
-            render={() =>
-              type === "movie" ? (
-                <MovieInfo information={information} />
-              ) : (
-                <TvInfo information={information} />
-              )
-            }
-          />
-          <Route
-            exact
-            path={`${path}/reparto`}
-            render={() => <ListCast id={id} type={type} />}
-          />
+        <NavLink
+          to={`/${type}/${id}/similares`}
+          exact
+          activeClassName='selected'
+          className='tab similar'
+        >
+          SIMILARES
+        </NavLink>
+      </div>
 
-          <Route
-            exact
-            path={`/movie/${id}/videos`}
-            render={() => <Videos id={id} />}
-          />
+      <Switch>
+        <Route
+          exact
+          path={`${path}/info`}
+          render={() =>
+            type === "movie" ? (
+              <MovieInfo information={information} />
+            ) : (
+              <TvInfo information={information} />
+            )
+          }
+        />
+        <Route
+          exact
+          path={`${path}/reparto`}
+          render={() => <ListCast id={id} type={type} />}
+        />
 
-          <Route
-            exact
-            path={`${path}/seasons/:temporada`}
-            render={() => (
-              <Episodios id={id} cantTemp={information.number_of_seasons} />
-            )}
-          />
+        <Route
+          exact
+          path={`/movie/${id}/videos`}
+          render={() => <Videos id={id} />}
+        />
 
-          <Route path={`${path}/similares`}>
-            <Similar id={id} type={type} />
-          </Route>
-        </Switch>
-      </Router>
+        <Route
+          exact
+          path={`${path}/seasons/:temporada`}
+          render={() => (
+            <Episodios id={id} cantTemp={information.number_of_seasons} />
+          )}
+        />
+        <Route path={`${path}/similares`}>
+          <Similar id={id} type={type} />
+        </Route>
+      </Switch>
     </>
   );
 };
